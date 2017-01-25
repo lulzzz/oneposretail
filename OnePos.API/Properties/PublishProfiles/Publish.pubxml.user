@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Administrator\Desktop\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>01/11/2017 17:08:04</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>01/11/2017 17:08:04</publishTime>
+    </File>
+    <File Include="bin/Castle.Core.dll">
+      <publishTime>11/06/2014 02:14:08</publishTime>
+    </File>
+    <File Include="bin/Castle.Windsor.dll">
+      <publishTime>05/18/2014 07:11:52</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/08/2012 18:00:50</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>01/02/2017 06:32:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>11/30/2016 16:07:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>12/07/2016 11:45:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>12/07/2016 11:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>12/06/2016 15:15:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>12/07/2016 11:49:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>12/07/2016 11:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>12/06/2016 15:09:52</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/13/2016 23:06:14</publishTime>
+    </File>
+    <File Include="bin/OnePos.API.dll">
+      <publishTime>01/17/2017 18:31:39</publishTime>
+    </File>
+    <File Include="bin/OnePos.DataCollector.dll">
+      <publishTime>01/16/2017 17:12:33</publishTime>
+    </File>
+    <File Include="bin/OnePos.Domain.dll">
+      <publishTime>01/17/2017 17:19:41</publishTime>
+    </File>
+    <File Include="bin/OnePos.Framework.dll">
+      <publishTime>01/12/2017 12:08:16</publishTime>
+    </File>
+    <File Include="bin/OnePos.Framework.ServiceModel.Client.dll">
+      <publishTime>01/12/2017 12:08:21</publishTime>
+    </File>
+    <File Include="bin/OnePos.Framework.ServiceModel.dll">
+      <publishTime>01/12/2017 12:08:19</publishTime>
+    </File>
+    <File Include="bin/OnePos.Framework.ServiceModel.Server.dll">
+      <publishTime>01/12/2017 12:08:24</publishTime>
+    </File>
+    <File Include="bin/OnePos.Message.dll">
+      <publishTime>01/17/2017 17:26:54</publishTime>
+    </File>
+    <File Include="bin/OnePos.Persistance.dll">
+      <publishTime>01/17/2017 17:19:55</publishTime>
+    </File>
+    <File Include="bin/OnePos.ServiceInterface.dll">
+      <publishTime>01/17/2017 18:30:18</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>02/16/2012 10:32:32</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Extensions.dll">
+      <publishTime>07/24/2015 14:15:58</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/24/2015 14:15:58</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Primitives.dll">
+      <publishTime>07/24/2015 14:15:58</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>02/16/2012 10:32:32</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/12/2017 04:27:17</publishTime>
+    </File>
+    <File Include="ManageProduct.svc">
+      <publishTime>01/12/2017 04:44:27</publishTime>
+    </File>
+    <File Include="ManageStores.svc">
+      <publishTime>01/12/2017 14:12:01</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/11/2017 17:15:59</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>01/12/2017 14:15:51</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

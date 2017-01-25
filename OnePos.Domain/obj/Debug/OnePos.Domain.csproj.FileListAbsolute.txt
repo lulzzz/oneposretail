@@ -1,0 +1,14 @@
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\OnePos.Domain.dll.config
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\OnePos.Domain.dll
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\OnePos.Domain.pdb
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\EntityFramework.dll
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\OnePos.Framework.dll
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\Castle.Windsor.dll
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\Castle.Core.dll
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\EntityFramework.xml
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\OnePos.Framework.pdb
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\Castle.Windsor.xml
+D:\OnePos_New\OnePos\OnePos.Domain\bin\Debug\Castle.Core.xml
+D:\OnePos_New\OnePos\OnePos.Domain\obj\Debug\OnePos.Domain.csprojResolveAssemblyReference.cache
+D:\OnePos_New\OnePos\OnePos.Domain\obj\Debug\OnePos.Domain.dll
+D:\OnePos_New\OnePos\OnePos.Domain\obj\Debug\OnePos.Domain.pdb

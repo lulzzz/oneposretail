@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="OnePos.API.ManageProduct" CodeBehind="ManageProduct.svc.cs" %>

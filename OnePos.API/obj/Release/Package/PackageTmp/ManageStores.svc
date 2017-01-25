@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="OnePos.API.ManageStores" CodeBehind="ManageStores.svc.cs" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>

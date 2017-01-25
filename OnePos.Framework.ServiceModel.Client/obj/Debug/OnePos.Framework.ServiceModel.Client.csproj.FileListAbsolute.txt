@@ -1,0 +1,17 @@
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\OnePos.Framework.ServiceModel.Client.dll
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\OnePos.Framework.ServiceModel.Client.pdb
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\log4net.dll
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\OnePos.Framework.dll
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\OnePos.Framework.ServiceModel.dll
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\Castle.Windsor.dll
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\EntityFramework.dll
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\Castle.Core.dll
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\log4net.xml
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\OnePos.Framework.pdb
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\OnePos.Framework.ServiceModel.pdb
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\Castle.Windsor.xml
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\EntityFramework.xml
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\bin\Debug\Castle.Core.xml
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\obj\Debug\OnePos.Framework.ServiceModel.Client.dll
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\obj\Debug\OnePos.Framework.ServiceModel.Client.pdb
+D:\OnePos_New\OnePos\OnePos.Framework.ServiceModel.Client\obj\Debug\OnePos.Framework.ServiceModel.Client.csprojResolveAssemblyReference.cache

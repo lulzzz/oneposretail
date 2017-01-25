@@ -1,0 +1,2401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnePosModelStoreContainer" CdmEntityContainer="OnePosEntities">
+    <EntitySetMapping Name="AccessLevels">
+      <EntityTypeMapping TypeName="OnePosModel.AccessLevel">
+        <MappingFragment StoreEntitySet="AccessLevels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CanViewReports" ColumnName="CanViewReports" />
+          <ScalarProperty Name="CanApplyCompToItem" ColumnName="CanApplyCompToItem" />
+          <ScalarProperty Name="CanOrder" ColumnName="CanOrder" />
+          <ScalarProperty Name="CanAccessSystemConfig" ColumnName="CanAccessSystemConfig" />
+          <ScalarProperty Name="CanSetMagStripe" ColumnName="CanSetMagStripe" />
+          <ScalarProperty Name="RequireMagcardLogin" ColumnName="RequireMagcardLogin" />
+          <ScalarProperty Name="CanCaptureElectronicPayments" ColumnName="CanCaptureElectronicPayments" />
+          <ScalarProperty Name="CanSearchAllPayments" ColumnName="CanSearchAllPayments" />
+          <ScalarProperty Name="CanTransferOrder" ColumnName="CanTransferOrder" />
+          <ScalarProperty Name="CanApplyAdditionalSurcharge" ColumnName="CanApplyAdditionalSurcharge" />
+          <ScalarProperty Name="CanNoSale" ColumnName="CanNoSale" />
+          <ScalarProperty Name="CanReopenOrder" ColumnName="CanReopenOrder" />
+          <ScalarProperty Name="CanSeeOtherUsersOrders" ColumnName="CanSeeOtherUsersOrders" />
+          <ScalarProperty Name="CanCloseHouse" ColumnName="CanCloseHouse" />
+          <ScalarProperty Name="CanBatchPayments" ColumnName="CanBatchPayments" />
+          <ScalarProperty Name="CanPromoCheck" ColumnName="CanPromoCheck" />
+          <ScalarProperty Name="CanApplyVoidToItem" ColumnName="CanApplyVoidToItem" />
+          <ScalarProperty Name="CanVoidPayment" ColumnName="CanVoidPayment" />
+          <ScalarProperty Name="CanApplyHousePayment" ColumnName="CanApplyHousePayment" />
+          <ScalarProperty Name="CanPayIn" ColumnName="CanPayIn" />
+          <ScalarProperty Name="CanPayOut" ColumnName="CanPayOut" />
+          <ScalarProperty Name="CanTaxFree" ColumnName="CanTaxFree" />
+          <ScalarProperty Name="CanForceUnlockTerminal" ColumnName="CanForceUnlockTerminal" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="GrowthBool1" ColumnName="GrowthBool1" />
+          <ScalarProperty Name="GrowthBool2" ColumnName="GrowthBool2" />
+          <ScalarProperty Name="GrowthBool3" ColumnName="GrowthBool3" />
+          <ScalarProperty Name="GrowthBool4" ColumnName="GrowthBool4" />
+          <ScalarProperty Name="GrowthBool5" ColumnName="GrowthBool5" />
+          <ScalarProperty Name="GrowthBool6" ColumnName="GrowthBool6" />
+          <ScalarProperty Name="GrowthBool7" ColumnName="GrowthBool7" />
+          <ScalarProperty Name="GrowthBool8" ColumnName="GrowthBool8" />
+          <ScalarProperty Name="GrowthBool9" ColumnName="GrowthBool9" />
+          <ScalarProperty Name="GrowthBool10" ColumnName="GrowthBool10" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Master" ColumnName="Master" />
+          <ScalarProperty Name="Sales" ColumnName="Sales" />
+          <ScalarProperty Name="Discounts" ColumnName="Discounts" />
+          <ScalarProperty Name="Payroll" ColumnName="Payroll" />
+          <ScalarProperty Name="Checkouts" ColumnName="Checkouts" />
+          <ScalarProperty Name="Onetouch" ColumnName="Onetouch" />
+          <ScalarProperty Name="Employee" ColumnName="Employee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutoGratuities">
+      <EntityTypeMapping TypeName="OnePosModel.AutoGratuity">
+        <MappingFragment StoreEntitySet="AutoGratuities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AutoGratuityRate" ColumnName="AutoGratuityRate" />
+          <ScalarProperty Name="IsFlatFee" ColumnName="IsFlatFee" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="AutoGratuitySeatStartCount" ColumnName="AutoGratuitySeatStartCount" />
+          <ScalarProperty Name="RunMonday" ColumnName="RunMonday" />
+          <ScalarProperty Name="RunTuesday" ColumnName="RunTuesday" />
+          <ScalarProperty Name="RunWednesday" ColumnName="RunWednesday" />
+          <ScalarProperty Name="RunThursday" ColumnName="RunThursday" />
+          <ScalarProperty Name="RunFriday" ColumnName="RunFriday" />
+          <ScalarProperty Name="RunSaturday" ColumnName="RunSaturday" />
+          <ScalarProperty Name="RunSunday" ColumnName="RunSunday" />
+          <ScalarProperty Name="EnableAboveTicketAmount" ColumnName="EnableAboveTicketAmount" />
+          <ScalarProperty Name="AboveTicketAmount" ColumnName="AboveTicketAmount" />
+          <ScalarProperty Name="MondayStartTime" ColumnName="MondayStartTime" />
+          <ScalarProperty Name="MondayEndTime" ColumnName="MondayEndTime" />
+          <ScalarProperty Name="TuesdayStartTime" ColumnName="TuesdayStartTime" />
+          <ScalarProperty Name="TuesdayEndTime" ColumnName="TuesdayEndTime" />
+          <ScalarProperty Name="WednesdayStartTime" ColumnName="WednesdayStartTime" />
+          <ScalarProperty Name="WednesdayEndTime" ColumnName="WednesdayEndTime" />
+          <ScalarProperty Name="ThursdayStartTime" ColumnName="ThursdayStartTime" />
+          <ScalarProperty Name="ThursdayEndTime" ColumnName="ThursdayEndTime" />
+          <ScalarProperty Name="FridayStartTime" ColumnName="FridayStartTime" />
+          <ScalarProperty Name="FridayEndTime" ColumnName="FridayEndTime" />
+          <ScalarProperty Name="SaturdayStartTime" ColumnName="SaturdayStartTime" />
+          <ScalarProperty Name="SaturdayEndTime" ColumnName="SaturdayEndTime" />
+          <ScalarProperty Name="SundayStartTime" ColumnName="SundayStartTime" />
+          <ScalarProperty Name="SundayEndTime" ColumnName="SundayEndTime" />
+          <ScalarProperty Name="ApplyToGrossPrice" ColumnName="ApplyToGrossPrice" />
+          <ScalarProperty Name="ApplyOnOrderTotal" ColumnName="ApplyOnOrderTotal" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutoGratuityClones">
+      <EntityTypeMapping TypeName="OnePosModel.AutoGratuityClone">
+        <MappingFragment StoreEntitySet="AutoGratuityClones">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ApplyToGrossPrice" ColumnName="ApplyToGrossPrice" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="CorrectedAmount" ColumnName="CorrectedAmount" />
+          <ScalarProperty Name="IsFlatFee" ColumnName="IsFlatFee" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="IsCorrected" ColumnName="IsCorrected" />
+          <ScalarProperty Name="IsCheckLevel" ColumnName="IsCheckLevel" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ApplyOnOrderTotal" ColumnName="ApplyOnOrderTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Breaks">
+      <EntityTypeMapping TypeName="OnePosModel.Break">
+        <MappingFragment StoreEntitySet="Breaks">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BreakStart" ColumnName="BreakStart" />
+          <ScalarProperty Name="BreakStop" ColumnName="BreakStop" />
+          <ScalarProperty Name="TimePunchId" ColumnName="TimePunchId" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessDays">
+      <EntityTypeMapping TypeName="OnePosModel.BusinessDay">
+        <MappingFragment StoreEntitySet="BusinessDays">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="CheckoutDateStamp" ColumnName="CheckoutDateStamp" />
+          <ScalarProperty Name="BusinessDayDateStamp" ColumnName="BusinessDayDateStamp" />
+          <ScalarProperty Name="CloseoutTerminalId" ColumnName="CloseoutTerminalId" />
+          <ScalarProperty Name="BatchSummaryId" ColumnName="BatchSummaryId" />
+          <ScalarProperty Name="BatchCloseId" ColumnName="BatchCloseId" />
+          <ScalarProperty Name="AmNotes" ColumnName="AmNotes" />
+          <ScalarProperty Name="WeatherType" ColumnName="WeatherType" />
+          <ScalarProperty Name="LunchNotes" ColumnName="LunchNotes" />
+          <ScalarProperty Name="PmNotes" ColumnName="PmNotes" />
+          <ScalarProperty Name="StoreLocationId" ColumnName="StoreLocationId" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="WasSyncedWithReportingService" ColumnName="WasSyncedWithReportingService" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerOrders">
+      <EntityTypeMapping TypeName="OnePosModel.CustomerOrder">
+        <MappingFragment StoreEntitySet="CustomerOrders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DateTimeStamp" ColumnName="DateTimeStamp" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="OnePosModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IDType" ColumnName="IDType" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="ExpiredDate" ColumnName="ExpiredDate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DayParts">
+      <EntityTypeMapping TypeName="OnePosModel.DayPart">
+        <MappingFragment StoreEntitySet="DayParts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+          <ScalarProperty Name="DaypartOrdinal" ColumnName="DaypartOrdinal" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deposits">
+      <EntityTypeMapping TypeName="OnePosModel.Deposit">
+        <MappingFragment StoreEntitySet="Deposits">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BusinessDate" ColumnName="BusinessDate" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="BusinessDayId" ColumnName="BusinessDayId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiscountClones">
+      <EntityTypeMapping TypeName="OnePosModel.DiscountClone">
+        <MappingFragment StoreEntitySet="DiscountClones">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeOfDiscount" ColumnName="TypeOfDiscount" />
+          <ScalarProperty Name="UsesCouponApi" ColumnName="UsesCouponApi" />
+          <ScalarProperty Name="CouponReference" ColumnName="CouponReference" />
+          <ScalarProperty Name="CouponAuthCode" ColumnName="CouponAuthCode" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="CorrectedAmount" ColumnName="CorrectedAmount" />
+          <ScalarProperty Name="IsCorrected" ColumnName="IsCorrected" />
+          <ScalarProperty Name="CanCombine" ColumnName="CanCombine" />
+          <ScalarProperty Name="AuthorizedById" ColumnName="AuthorizedById" />
+          <ScalarProperty Name="SaleOwnerId" ColumnName="SaleOwnerId" />
+          <ScalarProperty Name="Explanation" ColumnName="Explanation" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sale_Id" ColumnName="Sale_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Discounts">
+      <EntityTypeMapping TypeName="OnePosModel.Discount">
+        <MappingFragment StoreEntitySet="Discounts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TypeOfDiscount" ColumnName="TypeOfDiscount" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsVariableAmount" ColumnName="IsVariableAmount" />
+          <ScalarProperty Name="IsVariablePercent" ColumnName="IsVariablePercent" />
+          <ScalarProperty Name="RateAsDollarOrPercent" ColumnName="RateAsDollarOrPercent" />
+          <ScalarProperty Name="RateAsDollarOrAmount" ColumnName="RateAsDollarOrAmount" />
+          <ScalarProperty Name="PromptUserToEnterNotes" ColumnName="PromptUserToEnterNotes" />
+          <ScalarProperty Name="CanCombine" ColumnName="CanCombine" />
+          <ScalarProperty Name="UseCouponApi" ColumnName="UseCouponApi" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExceptionModifierGroups">
+      <EntityTypeMapping TypeName="OnePosModel.ExceptionModifierGroup">
+        <MappingFragment StoreEntitySet="ExceptionModifierGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="ApplyGroupPrice" ColumnName="ApplyGroupPrice" />
+          <ScalarProperty Name="GroupPrice" ColumnName="GroupPrice" />
+          <ScalarProperty Name="MenuPosition" ColumnName="MenuPosition" />
+          <ScalarProperty Name="OrderMenuItemsByWeight" ColumnName="OrderMenuItemsByWeight" />
+          <ScalarProperty Name="ExceptionModOnExceptionModGroupId" ColumnName="ExceptionModOnExceptionModGroupId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExceptionModifiers">
+      <EntityTypeMapping TypeName="OnePosModel.ExceptionModifier">
+        <MappingFragment StoreEntitySet="ExceptionModifiers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ForcedModGroupOnExceptionModId" ColumnName="ForcedModGroupOnExceptionModId" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PriceMethod" ColumnName="PriceMethod" />
+          <ScalarProperty Name="PromptForPrice" ColumnName="PromptForPrice" />
+          <ScalarProperty Name="IsGiftCard" ColumnName="IsGiftCard" />
+          <ScalarProperty Name="PricePerUnitOfWeight" ColumnName="PricePerUnitOfWeight" />
+          <ScalarProperty Name="IsAgeRestrict" ColumnName="IsAgeRestrict" />
+          <ScalarProperty Name="IsDisplayOnBilling" ColumnName="IsDisplayOnBilling" />
+          <ScalarProperty Name="UseWeightPricing" ColumnName="UseWeightPricing" />
+          <ScalarProperty Name="UnitOfWeightSize" ColumnName="UnitOfWeightSize" />
+          <ScalarProperty Name="CountsAsSalesRevenue" ColumnName="CountsAsSalesRevenue" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="RemoveAtZeroCount" ColumnName="RemoveAtZeroCount" />
+          <ScalarProperty Name="Downtick" ColumnName="Downtick" />
+          <ScalarProperty Name="MaxFloorQty" ColumnName="MaxFloorQty" />
+          <ScalarProperty Name="MenuPosition" ColumnName="MenuPosition" />
+          <ScalarProperty Name="Sku" ColumnName="Sku" />
+          <ScalarProperty Name="Plu" ColumnName="Plu" />
+          <ScalarProperty Name="Upc" ColumnName="Upc" />
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="CalorieCount" ColumnName="CalorieCount" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="RevenueTypeId" ColumnName="RevenueTypeId" />
+          <ScalarProperty Name="OrderedRecipeId" ColumnName="OrderedRecipeId" />
+          <ScalarProperty Name="SurchargeGroupId" ColumnName="SurchargeGroupId" />
+          <ScalarProperty Name="TaxGroupId" ColumnName="TaxGroupId" />
+          <ScalarProperty Name="ProductGroupPrinterId" ColumnName="ProductGroupPrinterId" />
+          <ScalarProperty Name="InclusiveTipRateId" ColumnName="InclusiveTipRateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExtendedBoolTables">
+      <EntityTypeMapping TypeName="OnePosModel.ExtendedBoolTable">
+        <MappingFragment StoreEntitySet="ExtendedBoolTables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="F1" ColumnName="F1" />
+          <ScalarProperty Name="F2" ColumnName="F2" />
+          <ScalarProperty Name="F3" ColumnName="F3" />
+          <ScalarProperty Name="F4" ColumnName="F4" />
+          <ScalarProperty Name="F5" ColumnName="F5" />
+          <ScalarProperty Name="F6" ColumnName="F6" />
+          <ScalarProperty Name="F7" ColumnName="F7" />
+          <ScalarProperty Name="F8" ColumnName="F8" />
+          <ScalarProperty Name="F9" ColumnName="F9" />
+          <ScalarProperty Name="F10" ColumnName="F10" />
+          <ScalarProperty Name="F11" ColumnName="F11" />
+          <ScalarProperty Name="F12" ColumnName="F12" />
+          <ScalarProperty Name="F13" ColumnName="F13" />
+          <ScalarProperty Name="F14" ColumnName="F14" />
+          <ScalarProperty Name="F15" ColumnName="F15" />
+          <ScalarProperty Name="F16" ColumnName="F16" />
+          <ScalarProperty Name="F17" ColumnName="F17" />
+          <ScalarProperty Name="F18" ColumnName="F18" />
+          <ScalarProperty Name="F19" ColumnName="F19" />
+          <ScalarProperty Name="F20" ColumnName="F20" />
+          <ScalarProperty Name="F21" ColumnName="F21" />
+          <ScalarProperty Name="F22" ColumnName="F22" />
+          <ScalarProperty Name="F23" ColumnName="F23" />
+          <ScalarProperty Name="F24" ColumnName="F24" />
+          <ScalarProperty Name="F25" ColumnName="F25" />
+          <ScalarProperty Name="F26" ColumnName="F26" />
+          <ScalarProperty Name="F27" ColumnName="F27" />
+          <ScalarProperty Name="F28" ColumnName="F28" />
+          <ScalarProperty Name="F29" ColumnName="F29" />
+          <ScalarProperty Name="F30" ColumnName="F30" />
+          <ScalarProperty Name="F31" ColumnName="F31" />
+          <ScalarProperty Name="F32" ColumnName="F32" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExtendedDecimalTables">
+      <EntityTypeMapping TypeName="OnePosModel.ExtendedDecimalTable">
+        <MappingFragment StoreEntitySet="ExtendedDecimalTables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="F1" ColumnName="F1" />
+          <ScalarProperty Name="F2" ColumnName="F2" />
+          <ScalarProperty Name="F3" ColumnName="F3" />
+          <ScalarProperty Name="F4" ColumnName="F4" />
+          <ScalarProperty Name="F5" ColumnName="F5" />
+          <ScalarProperty Name="F6" ColumnName="F6" />
+          <ScalarProperty Name="F7" ColumnName="F7" />
+          <ScalarProperty Name="F8" ColumnName="F8" />
+          <ScalarProperty Name="F9" ColumnName="F9" />
+          <ScalarProperty Name="F10" ColumnName="F10" />
+          <ScalarProperty Name="F11" ColumnName="F11" />
+          <ScalarProperty Name="F12" ColumnName="F12" />
+          <ScalarProperty Name="F13" ColumnName="F13" />
+          <ScalarProperty Name="F14" ColumnName="F14" />
+          <ScalarProperty Name="F15" ColumnName="F15" />
+          <ScalarProperty Name="F16" ColumnName="F16" />
+          <ScalarProperty Name="F17" ColumnName="F17" />
+          <ScalarProperty Name="F18" ColumnName="F18" />
+          <ScalarProperty Name="F19" ColumnName="F19" />
+          <ScalarProperty Name="F20" ColumnName="F20" />
+          <ScalarProperty Name="F21" ColumnName="F21" />
+          <ScalarProperty Name="F22" ColumnName="F22" />
+          <ScalarProperty Name="F23" ColumnName="F23" />
+          <ScalarProperty Name="F24" ColumnName="F24" />
+          <ScalarProperty Name="F25" ColumnName="F25" />
+          <ScalarProperty Name="F26" ColumnName="F26" />
+          <ScalarProperty Name="F27" ColumnName="F27" />
+          <ScalarProperty Name="F28" ColumnName="F28" />
+          <ScalarProperty Name="F29" ColumnName="F29" />
+          <ScalarProperty Name="F30" ColumnName="F30" />
+          <ScalarProperty Name="F31" ColumnName="F31" />
+          <ScalarProperty Name="F32" ColumnName="F32" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExtendedIntTables">
+      <EntityTypeMapping TypeName="OnePosModel.ExtendedIntTable">
+        <MappingFragment StoreEntitySet="ExtendedIntTables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="F1" ColumnName="F1" />
+          <ScalarProperty Name="F2" ColumnName="F2" />
+          <ScalarProperty Name="F3" ColumnName="F3" />
+          <ScalarProperty Name="F4" ColumnName="F4" />
+          <ScalarProperty Name="F5" ColumnName="F5" />
+          <ScalarProperty Name="F6" ColumnName="F6" />
+          <ScalarProperty Name="F7" ColumnName="F7" />
+          <ScalarProperty Name="F8" ColumnName="F8" />
+          <ScalarProperty Name="F9" ColumnName="F9" />
+          <ScalarProperty Name="F10" ColumnName="F10" />
+          <ScalarProperty Name="F11" ColumnName="F11" />
+          <ScalarProperty Name="F12" ColumnName="F12" />
+          <ScalarProperty Name="F13" ColumnName="F13" />
+          <ScalarProperty Name="F14" ColumnName="F14" />
+          <ScalarProperty Name="F15" ColumnName="F15" />
+          <ScalarProperty Name="F16" ColumnName="F16" />
+          <ScalarProperty Name="F17" ColumnName="F17" />
+          <ScalarProperty Name="F18" ColumnName="F18" />
+          <ScalarProperty Name="F19" ColumnName="F19" />
+          <ScalarProperty Name="F20" ColumnName="F20" />
+          <ScalarProperty Name="F21" ColumnName="F21" />
+          <ScalarProperty Name="F22" ColumnName="F22" />
+          <ScalarProperty Name="F23" ColumnName="F23" />
+          <ScalarProperty Name="F24" ColumnName="F24" />
+          <ScalarProperty Name="F25" ColumnName="F25" />
+          <ScalarProperty Name="F26" ColumnName="F26" />
+          <ScalarProperty Name="F27" ColumnName="F27" />
+          <ScalarProperty Name="F28" ColumnName="F28" />
+          <ScalarProperty Name="F29" ColumnName="F29" />
+          <ScalarProperty Name="F30" ColumnName="F30" />
+          <ScalarProperty Name="F31" ColumnName="F31" />
+          <ScalarProperty Name="F32" ColumnName="F32" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExtendedLinkTables">
+      <EntityTypeMapping TypeName="OnePosModel.ExtendedLinkTable">
+        <MappingFragment StoreEntitySet="ExtendedLinkTables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsAccessLevelLink" ColumnName="IsAccessLevelLink" />
+          <ScalarProperty Name="IsAutoGratuityLink" ColumnName="IsAutoGratuityLink" />
+          <ScalarProperty Name="IsAutoGratuityCloneLink" ColumnName="IsAutoGratuityCloneLink" />
+          <ScalarProperty Name="IsBreaklLink" ColumnName="IsBreaklLink" />
+          <ScalarProperty Name="IsBusinessDayLink" ColumnName="IsBusinessDayLink" />
+          <ScalarProperty Name="IsDayPartLink" ColumnName="IsDayPartLink" />
+          <ScalarProperty Name="IsDepositLink" ColumnName="IsDepositLink" />
+          <ScalarProperty Name="IsDiscountLink" ColumnName="IsDiscountLink" />
+          <ScalarProperty Name="IsDiscountCloneLink" ColumnName="IsDiscountCloneLink" />
+          <ScalarProperty Name="IsExceptionModifierLink" ColumnName="IsExceptionModifierLink" />
+          <ScalarProperty Name="IsExceptionModifierGroupLink" ColumnName="IsExceptionModifierGroupLink" />
+          <ScalarProperty Name="IsFingerPasswordLink" ColumnName="IsFingerPasswordLink" />
+          <ScalarProperty Name="IsForcedModifierLink" ColumnName="IsForcedModifierLink" />
+          <ScalarProperty Name="IsForcedModifierGroupLink" ColumnName="IsForcedModifierGroupLink" />
+          <ScalarProperty Name="IsGiftCardsSoldLink" ColumnName="IsGiftCardsSoldLink" />
+          <ScalarProperty Name="IsGlCodeLink" ColumnName="IsGlCodeLink" />
+          <ScalarProperty Name="IsHouseAccountLink" ColumnName="IsHouseAccountLink" />
+          <ScalarProperty Name="IsInclusiveTipRateLink" ColumnName="IsInclusiveTipRateLink" />
+          <ScalarProperty Name="IsInventoryLogCountLink" ColumnName="IsInventoryLogCountLink" />
+          <ScalarProperty Name="IsInvoiceLineItemLink" ColumnName="IsInvoiceLineItemLink" />
+          <ScalarProperty Name="IsJobCodeLink" ColumnName="IsJobCodeLink" />
+          <ScalarProperty Name="IsLayoutObjLink" ColumnName="IsLayoutObjLink" />
+          <ScalarProperty Name="IsLocationLayoutLink" ColumnName="IsLocationLayoutLink" />
+          <ScalarProperty Name="IsMenuLink" ColumnName="IsMenuLink" />
+          <ScalarProperty Name="IsMenuGroupLink" ColumnName="IsMenuGroupLink" />
+          <ScalarProperty Name="IsNoSaleLink" ColumnName="IsNoSaleLink" />
+          <ScalarProperty Name="IsOrderLink" ColumnName="IsOrderLink" />
+          <ScalarProperty Name="IsOrderedRecipeLink" ColumnName="IsOrderedRecipeLink" />
+          <ScalarProperty Name="IsPageLayoutStructureLink" ColumnName="IsPageLayoutStructureLink" />
+          <ScalarProperty Name="IsPaygradeLink" ColumnName="IsPaygradeLink" />
+          <ScalarProperty Name="IsPaymentLink" ColumnName="IsPaymentLink" />
+          <ScalarProperty Name="IsPaymentReasonLink" ColumnName="IsPaymentReasonLink" />
+          <ScalarProperty Name="IsPayrollRunLink" ColumnName="IsPayrollRunLink" />
+          <ScalarProperty Name="IsPciLogLink" ColumnName="IsPciLogLink" />
+          <ScalarProperty Name="IsPriceIntervalDiscountLink" ColumnName="IsPriceIntervalDiscountLink" />
+          <ScalarProperty Name="IsPrinterLink" ColumnName="IsPrinterLink" />
+          <ScalarProperty Name="IsPrinterExclusionLink" ColumnName="IsPrinterExclusionLink" />
+          <ScalarProperty Name="IsPrinterGroupLink" ColumnName="IsPrinterGroupLink" />
+          <ScalarProperty Name="IsProcessorConfigurationLink" ColumnName="IsProcessorConfigurationLink" />
+          <ScalarProperty Name="IsProductLink" ColumnName="IsProductLink" />
+          <ScalarProperty Name="IsProductGroupLink" ColumnName="IsProductGroupLink" />
+          <ScalarProperty Name="IsProfitCenterLink" ColumnName="IsProfitCenterLink" />
+          <ScalarProperty Name="IsReceipeLink" ColumnName="IsReceipeLink" />
+          <ScalarProperty Name="IsRecipeIngredientLink" ColumnName="IsRecipeIngredientLink" />
+          <ScalarProperty Name="IsReceipeProductLink" ColumnName="IsReceipeProductLink" />
+          <ScalarProperty Name="IsRevenueTypeLink" ColumnName="IsRevenueTypeLink" />
+          <ScalarProperty Name="IsRoleLink" ColumnName="IsRoleLink" />
+          <ScalarProperty Name="IsSaleLink" ColumnName="IsSaleLink" />
+          <ScalarProperty Name="IsScheduleLink" ColumnName="IsScheduleLink" />
+          <ScalarProperty Name="IsShiftLink" ColumnName="IsShiftLink" />
+          <ScalarProperty Name="IsSmsConfigurationLink" ColumnName="IsSmsConfigurationLink" />
+          <ScalarProperty Name="IsSpecialPayLink" ColumnName="IsSpecialPayLink" />
+          <ScalarProperty Name="IsStoreLocationLink" ColumnName="IsStoreLocationLink" />
+          <ScalarProperty Name="IsSurchargeAccountLink" ColumnName="IsSurchargeAccountLink" />
+          <ScalarProperty Name="IsSysConfigLink" ColumnName="IsSysConfigLink" />
+          <ScalarProperty Name="IsTaxConfigurationLink" ColumnName="IsTaxConfigurationLink" />
+          <ScalarProperty Name="IsTaxConfigurationCloneLink" ColumnName="IsTaxConfigurationCloneLink" />
+          <ScalarProperty Name="IsTaxGroupLink" ColumnName="IsTaxGroupLink" />
+          <ScalarProperty Name="IsTenderTypeLink" ColumnName="IsTenderTypeLink" />
+          <ScalarProperty Name="IsTerminalLink" ColumnName="IsTerminalLink" />
+          <ScalarProperty Name="IsTerminalPrinterMapLink" ColumnName="IsTerminalPrinterMapLink" />
+          <ScalarProperty Name="IsTimePunchLink" ColumnName="IsTimePunchLink" />
+          <ScalarProperty Name="IsTransactionLink" ColumnName="IsTransactionLink" />
+          <ScalarProperty Name="IsUserLink" ColumnName="IsUserLink" />
+          <ScalarProperty Name="IsVendorAccountLink" ColumnName="IsVendorAccountLink" />
+          <ScalarProperty Name="IsWorkCenterLink" ColumnName="IsWorkCenterLink" />
+          <ScalarProperty Name="BoolPayload" ColumnName="BoolPayload" />
+          <ScalarProperty Name="StringPayload" ColumnName="StringPayload" />
+          <ScalarProperty Name="DecimalPayload" ColumnName="DecimalPayload" />
+          <ScalarProperty Name="IntPayload" ColumnName="IntPayload" />
+          <ScalarProperty Name="Fk1" ColumnName="Fk1" />
+          <ScalarProperty Name="Fk2" ColumnName="Fk2" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExtendedStringTables">
+      <EntityTypeMapping TypeName="OnePosModel.ExtendedStringTable">
+        <MappingFragment StoreEntitySet="ExtendedStringTables">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="F1" ColumnName="F1" />
+          <ScalarProperty Name="F2" ColumnName="F2" />
+          <ScalarProperty Name="F3" ColumnName="F3" />
+          <ScalarProperty Name="F4" ColumnName="F4" />
+          <ScalarProperty Name="F5" ColumnName="F5" />
+          <ScalarProperty Name="F6" ColumnName="F6" />
+          <ScalarProperty Name="F7" ColumnName="F7" />
+          <ScalarProperty Name="F8" ColumnName="F8" />
+          <ScalarProperty Name="F9" ColumnName="F9" />
+          <ScalarProperty Name="F10" ColumnName="F10" />
+          <ScalarProperty Name="F11" ColumnName="F11" />
+          <ScalarProperty Name="F12" ColumnName="F12" />
+          <ScalarProperty Name="F13" ColumnName="F13" />
+          <ScalarProperty Name="F14" ColumnName="F14" />
+          <ScalarProperty Name="F15" ColumnName="F15" />
+          <ScalarProperty Name="F16" ColumnName="F16" />
+          <ScalarProperty Name="F17" ColumnName="F17" />
+          <ScalarProperty Name="F18" ColumnName="F18" />
+          <ScalarProperty Name="F19" ColumnName="F19" />
+          <ScalarProperty Name="F20" ColumnName="F20" />
+          <ScalarProperty Name="F21" ColumnName="F21" />
+          <ScalarProperty Name="F22" ColumnName="F22" />
+          <ScalarProperty Name="F23" ColumnName="F23" />
+          <ScalarProperty Name="F24" ColumnName="F24" />
+          <ScalarProperty Name="F25" ColumnName="F25" />
+          <ScalarProperty Name="F26" ColumnName="F26" />
+          <ScalarProperty Name="F27" ColumnName="F27" />
+          <ScalarProperty Name="F28" ColumnName="F28" />
+          <ScalarProperty Name="F29" ColumnName="F29" />
+          <ScalarProperty Name="F30" ColumnName="F30" />
+          <ScalarProperty Name="F31" ColumnName="F31" />
+          <ScalarProperty Name="F32" ColumnName="F32" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FingerPasswords">
+      <EntityTypeMapping TypeName="OnePosModel.FingerPassword">
+        <MappingFragment StoreEntitySet="FingerPasswords">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForcedModifierGroups">
+      <EntityTypeMapping TypeName="OnePosModel.ForcedModifierGroup">
+        <MappingFragment StoreEntitySet="ForcedModifierGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="MaximumChoice" ColumnName="MaximumChoice" />
+          <ScalarProperty Name="ApplyGroupPrice" ColumnName="ApplyGroupPrice" />
+          <ScalarProperty Name="GroupPrice" ColumnName="GroupPrice" />
+          <ScalarProperty Name="MenuPosition" ColumnName="MenuPosition" />
+          <ScalarProperty Name="MinimumChoice" ColumnName="MinimumChoice" />
+          <ScalarProperty Name="OrderMenuItemsByWeight" ColumnName="OrderMenuItemsByWeight" />
+          <ScalarProperty Name="ExceptionModOnForcedModGroupId" ColumnName="ExceptionModOnForcedModGroupId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ForcedModifiers">
+      <EntityTypeMapping TypeName="OnePosModel.ForcedModifier">
+        <MappingFragment StoreEntitySet="ForcedModifiers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="ForcedModGroupOnForcedModId" ColumnName="ForcedModGroupOnForcedModId" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PriceMethod" ColumnName="PriceMethod" />
+          <ScalarProperty Name="PromptForPrice" ColumnName="PromptForPrice" />
+          <ScalarProperty Name="IsGiftCard" ColumnName="IsGiftCard" />
+          <ScalarProperty Name="PricePerUnitOfWeight" ColumnName="PricePerUnitOfWeight" />
+          <ScalarProperty Name="UseWeightPricing" ColumnName="UseWeightPricing" />
+          <ScalarProperty Name="UnitOfWeightSize" ColumnName="UnitOfWeightSize" />
+          <ScalarProperty Name="IsAgeRestrict" ColumnName="IsAgeRestrict" />
+          <ScalarProperty Name="IsDisplayOnBilling" ColumnName="IsDisplayOnBilling" />
+          <ScalarProperty Name="CountsAsSalesRevenue" ColumnName="CountsAsSalesRevenue" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="RemoveAtZeroCount" ColumnName="RemoveAtZeroCount" />
+          <ScalarProperty Name="Downtick" ColumnName="Downtick" />
+          <ScalarProperty Name="MaxFloorQty" ColumnName="MaxFloorQty" />
+          <ScalarProperty Name="MenuPosition" ColumnName="MenuPosition" />
+          <ScalarProperty Name="Sku" ColumnName="Sku" />
+          <ScalarProperty Name="Plu" ColumnName="Plu" />
+          <ScalarProperty Name="Upc" ColumnName="Upc" />
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="CalorieCount" ColumnName="CalorieCount" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="RevenueTypeId" ColumnName="RevenueTypeId" />
+          <ScalarProperty Name="OrderedRecipeId" ColumnName="OrderedRecipeId" />
+          <ScalarProperty Name="SurchargeGroupId" ColumnName="SurchargeGroupId" />
+          <ScalarProperty Name="ProductGroupPrinterId" ColumnName="ProductGroupPrinterId" />
+          <ScalarProperty Name="InclusiveTipRateId" ColumnName="InclusiveTipRateId" />
+          <ScalarProperty Name="TaxGroupId" ColumnName="TaxGroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiftCardsSolds">
+      <EntityTypeMapping TypeName="OnePosModel.GiftCardsSold">
+        <MappingFragment StoreEntitySet="GiftCardsSolds">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="DaypartId" ColumnName="DaypartId" />
+          <ScalarProperty Name="RevenueCenterId" ColumnName="RevenueCenterId" />
+          <ScalarProperty Name="GiftCardNumber" ColumnName="GiftCardNumber" />
+          <ScalarProperty Name="SaleId" ColumnName="SaleId" />
+          <ScalarProperty Name="ExtId" ColumnName="ExtId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GlCodes">
+      <EntityTypeMapping TypeName="OnePosModel.GlCode">
+        <MappingFragment StoreEntitySet="GlCodes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HouseAccounts">
+      <EntityTypeMapping TypeName="OnePosModel.HouseAccount">
+        <MappingFragment StoreEntitySet="HouseAccounts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="TaxId" ColumnName="TaxId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="AccountLimit" ColumnName="AccountLimit" />
+          <ScalarProperty Name="AccountTerms" ColumnName="AccountTerms" />
+          <ScalarProperty Name="HasNoHighLimit" ColumnName="HasNoHighLimit" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="IsVoucher" ColumnName="IsVoucher" />
+          <ScalarProperty Name="IsCoupon" ColumnName="IsCoupon" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InclusiveTipRates">
+      <EntityTypeMapping TypeName="OnePosModel.InclusiveTipRate">
+        <MappingFragment StoreEntitySet="InclusiveTipRates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="IsFlatFee" ColumnName="IsFlatFee" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="CorrectedAmount" ColumnName="CorrectedAmount" />
+          <ScalarProperty Name="IsCorrected" ColumnName="IsCorrected" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventoryCountLogs">
+      <EntityTypeMapping TypeName="OnePosModel.InventoryCountLog">
+        <MappingFragment StoreEntitySet="InventoryCountLogs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+          <ScalarProperty Name="ReceivedQty" ColumnName="ReceivedQty" />
+          <ScalarProperty Name="OnHandQty" ColumnName="OnHandQty" />
+          <ScalarProperty Name="ClaimQty" ColumnName="ClaimQty" />
+          <ScalarProperty Name="IntransitQty" ColumnName="IntransitQty" />
+          <ScalarProperty Name="OnOrderQty" ColumnName="OnOrderQty" />
+          <ScalarProperty Name="ActualPrice" ColumnName="ActualPrice" />
+          <ScalarProperty Name="PricePerUnit" ColumnName="PricePerUnit" />
+          <ScalarProperty Name="MRPPerUnit" ColumnName="MRPPerUnit" />
+          <ScalarProperty Name="DiscountPricePerUnit" ColumnName="DiscountPricePerUnit" />
+          <ScalarProperty Name="ProdMfgDate" ColumnName="ProdMfgDate" />
+          <ScalarProperty Name="ProdReceiveDate" ColumnName="ProdReceiveDate" />
+          <ScalarProperty Name="ProdExpiryDate" ColumnName="ProdExpiryDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="StorageLocation" ColumnName="StorageLocation" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="InvoiceLineItem_Id" ColumnName="InvoiceLineItem_Id" />
+          <ScalarProperty Name="StoreLocation_Id" ColumnName="StoreLocation_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceLineItems">
+      <EntityTypeMapping TypeName="OnePosModel.InvoiceLineItem">
+        <MappingFragment StoreEntitySet="InvoiceLineItems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="InvoiceTotal" ColumnName="InvoiceTotal" />
+          <ScalarProperty Name="purchaseItemsCount" ColumnName="purchaseItemsCount" />
+          <ScalarProperty Name="AmountTransactionType" ColumnName="AmountTransactionType" />
+          <ScalarProperty Name="AmountTransactionDate" ColumnName="AmountTransactionDate" />
+          <ScalarProperty Name="AmountTransactionId" ColumnName="AmountTransactionId" />
+          <ScalarProperty Name="IsDataEntryComplete" ColumnName="IsDataEntryComplete" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PurchaseOrder_Id" ColumnName="PurchaseOrder_Id" />
+          <ScalarProperty Name="VendorAccount_Id" ColumnName="VendorAccount_Id" />
+          <ScalarProperty Name="SysConfig_Id" ColumnName="SysConfig_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobCodes">
+      <EntityTypeMapping TypeName="OnePosModel.JobCode">
+        <MappingFragment StoreEntitySet="JobCodes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="JobType" ColumnName="JobType" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LayoutObjs">
+      <EntityTypeMapping TypeName="OnePosModel.LayoutObj">
+        <MappingFragment StoreEntitySet="LayoutObjs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="X" ColumnName="X" />
+          <ScalarProperty Name="Y" ColumnName="Y" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Foreground" ColumnName="Foreground" />
+          <ScalarProperty Name="BackgroundStart" ColumnName="BackgroundStart" />
+          <ScalarProperty Name="BackgroundEnd" ColumnName="BackgroundEnd" />
+          <ScalarProperty Name="FunctionNumber" ColumnName="FunctionNumber" />
+          <ScalarProperty Name="SpareString" ColumnName="SpareString" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="Tag" ColumnName="Tag" />
+          <ScalarProperty Name="PagedId" ColumnName="PagedId" />
+          <ScalarProperty Name="ButtonText" ColumnName="ButtonText" />
+          <ScalarProperty Name="FontColorStr" ColumnName="FontColorStr" />
+          <ScalarProperty Name="BorderColorStr" ColumnName="BorderColorStr" />
+          <ScalarProperty Name="BackgroundColorStr" ColumnName="BackgroundColorStr" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LocationLayouts">
+      <EntityTypeMapping TypeName="OnePosModel.LocationLayout">
+        <MappingFragment StoreEntitySet="LocationLayouts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="LocationX" ColumnName="LocationX" />
+          <ScalarProperty Name="LocationY" ColumnName="LocationY" />
+          <ScalarProperty Name="SizeX" ColumnName="SizeX" />
+          <ScalarProperty Name="SizeY" ColumnName="SizeY" />
+          <ScalarProperty Name="PageNumber" ColumnName="PageNumber" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuGroups">
+      <EntityTypeMapping TypeName="OnePosModel.MenuGroup">
+        <MappingFragment StoreEntitySet="MenuGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="OnePosModel.Menu">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="OrderMenuItemsByWeight" ColumnName="OrderMenuItemsByWeight" />
+          <ScalarProperty Name="DefaultSelectedProductGroupId" ColumnName="DefaultSelectedProductGroupId" />
+          <ScalarProperty Name="DaysToRunFlags" ColumnName="DaysToRunFlags" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NoSales">
+      <EntityTypeMapping TypeName="OnePosModel.NoSale">
+        <MappingFragment StoreEntitySet="NoSales">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderedRecipes">
+      <EntityTypeMapping TypeName="OnePosModel.OrderedRecipe">
+        <MappingFragment StoreEntitySet="OrderedRecipes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="WhenOrdered" ColumnName="WhenOrdered" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="OnePosModel.Order">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="HumanReadableOrderId" ColumnName="HumanReadableOrderId" />
+          <ScalarProperty Name="BarCodeNumber" ColumnName="BarCodeNumber" />
+          <ScalarProperty Name="OpenDateStamp" ColumnName="OpenDateStamp" />
+          <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+          <ScalarProperty Name="CloserId" ColumnName="CloserId" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="ClosedDateStamp" ColumnName="ClosedDateStamp" />
+          <ScalarProperty Name="ReservationTime" ColumnName="ReservationTime" />
+          <ScalarProperty Name="SitDownTime" ColumnName="SitDownTime" />
+          <ScalarProperty Name="FirstOrderTime" ColumnName="FirstOrderTime" />
+          <ScalarProperty Name="LastOrderTime" ColumnName="LastOrderTime" />
+          <ScalarProperty Name="FirstPrintTime" ColumnName="FirstPrintTime" />
+          <ScalarProperty Name="FirstPayTime" ColumnName="FirstPayTime" />
+          <ScalarProperty Name="LastPayTime" ColumnName="LastPayTime" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="TerminalWhereCreatedId" ColumnName="TerminalWhereCreatedId" />
+          <ScalarProperty Name="ReopenByUserId" ColumnName="ReopenByUserId" />
+          <ScalarProperty Name="BusinessDayId" ColumnName="BusinessDayId" />
+          <ScalarProperty Name="CardOnFileExtId" ColumnName="CardOnFileExtId" />
+          <ScalarProperty Name="RevenueCenterId" ColumnName="RevenueCenterId" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="PrintCount" ColumnName="PrintCount" />
+          <ScalarProperty Name="ReopenTime" ColumnName="ReopenTime" />
+          <ScalarProperty Name="IsBarSeat" ColumnName="IsBarSeat" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="HasHeadOfTable" ColumnName="HasHeadOfTable" />
+          <ScalarProperty Name="IsClosed" ColumnName="IsClosed" />
+          <ScalarProperty Name="HasCardOnFile" ColumnName="HasCardOnFile" />
+          <ScalarProperty Name="HasTimedOut" ColumnName="HasTimedOut" />
+          <ScalarProperty Name="LastAttentedToDateStamp" ColumnName="LastAttentedToDateStamp" />
+          <ScalarProperty Name="LastModifiedDateStamp" ColumnName="LastModifiedDateStamp" />
+          <ScalarProperty Name="SplitBySeatHasBeenApplied" ColumnName="SplitBySeatHasBeenApplied" />
+          <ScalarProperty Name="UserChangedCheckSinceSplitBySeat" ColumnName="UserChangedCheckSinceSplitBySeat" />
+          <ScalarProperty Name="EqualPayIsActive" ColumnName="EqualPayIsActive" />
+          <ScalarProperty Name="EqualPayCount" ColumnName="EqualPayCount" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Ptr_OrderId" ColumnName="Ptr_OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageLayoutStructures">
+      <EntityTypeMapping TypeName="OnePosModel.PageLayoutStructure">
+        <MappingFragment StoreEntitySet="PageLayoutStructures">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="PagedId" ColumnName="PagedId" />
+          <ScalarProperty Name="ObjectId" ColumnName="ObjectId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayGrades">
+      <EntityTypeMapping TypeName="OnePosModel.PayGrade">
+        <MappingFragment StoreEntitySet="PayGrades">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="WageRate" ColumnName="WageRate" />
+          <ScalarProperty Name="TipTaxRate" ColumnName="TipTaxRate" />
+          <ScalarProperty Name="IsSalaried" ColumnName="IsSalaried" />
+          <ScalarProperty Name="OtAppliedByDayHours" ColumnName="OtAppliedByDayHours" />
+          <ScalarProperty Name="WageRateOnOverTime" ColumnName="WageRateOnOverTime" />
+          <ScalarProperty Name="BreaksArePaid" ColumnName="BreaksArePaid" />
+          <ScalarProperty Name="OtHoursThreshold" ColumnName="OtHoursThreshold" />
+          <ScalarProperty Name="IsEligibleForOvertimePay" ColumnName="IsEligibleForOvertimePay" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentReasons">
+      <EntityTypeMapping TypeName="OnePosModel.PaymentReason">
+        <MappingFragment StoreEntitySet="PaymentReasons">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="OnePosModel.Payment">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="AffectsCash" ColumnName="AffectsCash" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="WasChangeFromVoucher" ColumnName="WasChangeFromVoucher" />
+          <ScalarProperty Name="WasChangeFromGiftCard" ColumnName="WasChangeFromGiftCard" />
+          <ScalarProperty Name="WasCreditCardAdvance" ColumnName="WasCreditCardAdvance" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="WasDrawerStart" ColumnName="WasDrawerStart" />
+          <ScalarProperty Name="WasDrawerEnd" ColumnName="WasDrawerEnd" />
+          <ScalarProperty Name="WasPaidIn" ColumnName="WasPaidIn" />
+          <ScalarProperty Name="DaypartId" ColumnName="DaypartId" />
+          <ScalarProperty Name="RevenueCenterId" ColumnName="RevenueCenterId" />
+          <ScalarProperty Name="TransactionTypeId" ColumnName="TransactionTypeId" />
+          <ScalarProperty Name="ReasonId" ColumnName="ReasonId" />
+          <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TenderType_Id" ColumnName="TenderType_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PayrollRuns">
+      <EntityTypeMapping TypeName="OnePosModel.PayrollRun">
+        <MappingFragment StoreEntitySet="PayrollRuns">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PciLogs">
+      <EntityTypeMapping TypeName="OnePosModel.PciLog">
+        <MappingFragment StoreEntitySet="PciLogs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceIntervalDiscounts">
+      <EntityTypeMapping TypeName="OnePosModel.PriceIntervalDiscount">
+        <MappingFragment StoreEntitySet="PriceIntervalDiscounts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="RunMonday" ColumnName="RunMonday" />
+          <ScalarProperty Name="RunTuesday" ColumnName="RunTuesday" />
+          <ScalarProperty Name="RunWednesday" ColumnName="RunWednesday" />
+          <ScalarProperty Name="RunThursday" ColumnName="RunThursday" />
+          <ScalarProperty Name="RunFriday" ColumnName="RunFriday" />
+          <ScalarProperty Name="RunSaturday" ColumnName="RunSaturday" />
+          <ScalarProperty Name="RunSunday" ColumnName="RunSunday" />
+          <ScalarProperty Name="MondayStartTime" ColumnName="MondayStartTime" />
+          <ScalarProperty Name="MondayEndTime" ColumnName="MondayEndTime" />
+          <ScalarProperty Name="TuesdayStartTime" ColumnName="TuesdayStartTime" />
+          <ScalarProperty Name="TuesdayEndTime" ColumnName="TuesdayEndTime" />
+          <ScalarProperty Name="WednesdayStartTime" ColumnName="WednesdayStartTime" />
+          <ScalarProperty Name="WednesdayEndTime" ColumnName="WednesdayEndTime" />
+          <ScalarProperty Name="ThursdayStartTime" ColumnName="ThursdayStartTime" />
+          <ScalarProperty Name="ThursdayEndTime" ColumnName="ThursdayEndTime" />
+          <ScalarProperty Name="FridayStartTime" ColumnName="FridayStartTime" />
+          <ScalarProperty Name="FridayEndTime" ColumnName="FridayEndTime" />
+          <ScalarProperty Name="SaturdayStartTime" ColumnName="SaturdayStartTime" />
+          <ScalarProperty Name="SaturdayEndTime" ColumnName="SaturdayEndTime" />
+          <ScalarProperty Name="SundayStartTime" ColumnName="SundayStartTime" />
+          <ScalarProperty Name="SundayEndTime" ColumnName="SundayEndTime" />
+          <ScalarProperty Name="AmountOrPercent" ColumnName="AmountOrPercent" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="IsPercentOff" ColumnName="IsPercentOff" />
+          <ScalarProperty Name="IsDollarsOff" ColumnName="IsDollarsOff" />
+          <ScalarProperty Name="IsSpecifiedPrice" ColumnName="IsSpecifiedPrice" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrinterExclusions">
+      <EntityTypeMapping TypeName="OnePosModel.PrinterExclusion">
+        <MappingFragment StoreEntitySet="PrinterExclusions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="ProductGroupId" ColumnName="ProductGroupId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Terminal_Id" ColumnName="Terminal_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrinterGroups">
+      <EntityTypeMapping TypeName="OnePosModel.PrinterGroup">
+        <MappingFragment StoreEntitySet="PrinterGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Printers">
+      <EntityTypeMapping TypeName="OnePosModel.Printer">
+        <MappingFragment StoreEntitySet="Printers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="IsNetworkPrinter" ColumnName="IsNetworkPrinter" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProcessorConfigurations">
+      <EntityTypeMapping TypeName="OnePosModel.ProcessorConfiguration">
+        <MappingFragment StoreEntitySet="ProcessorConfigurations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="MerchantIdCredit" ColumnName="MerchantIdCredit" />
+          <ScalarProperty Name="MerchantPasswordCredit" ColumnName="MerchantPasswordCredit" />
+          <ScalarProperty Name="SecureDeviceIdCredit" ColumnName="SecureDeviceIdCredit" />
+          <ScalarProperty Name="Ep1Credit" ColumnName="Ep1Credit" />
+          <ScalarProperty Name="Ep2Credit" ColumnName="Ep2Credit" />
+          <ScalarProperty Name="PortCredit" ColumnName="PortCredit" />
+          <ScalarProperty Name="CreditIsEnabled" ColumnName="CreditIsEnabled" />
+          <ScalarProperty Name="ProcessingGatewayCredit" ColumnName="ProcessingGatewayCredit" />
+          <ScalarProperty Name="MerchantIdGift" ColumnName="MerchantIdGift" />
+          <ScalarProperty Name="MerchantPasswordGift" ColumnName="MerchantPasswordGift" />
+          <ScalarProperty Name="SecureDeviceIdGift" ColumnName="SecureDeviceIdGift" />
+          <ScalarProperty Name="Ep1Gift" ColumnName="Ep1Gift" />
+          <ScalarProperty Name="Ep2Gift" ColumnName="Ep2Gift" />
+          <ScalarProperty Name="PortGift" ColumnName="PortGift" />
+          <ScalarProperty Name="GiftIsEnabled" ColumnName="GiftIsEnabled" />
+          <ScalarProperty Name="ProcessingGatewayGift" ColumnName="ProcessingGatewayGift" />
+          <ScalarProperty Name="MerchantIdRoomService" ColumnName="MerchantIdRoomService" />
+          <ScalarProperty Name="MerchantPasswordRoomService" ColumnName="MerchantPasswordRoomService" />
+          <ScalarProperty Name="RoomServiceIsEnabled" ColumnName="RoomServiceIsEnabled" />
+          <ScalarProperty Name="ProcessingGatewayRoom" ColumnName="ProcessingGatewayRoom" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductGroups">
+      <EntityTypeMapping TypeName="OnePosModel.ProductGroup">
+        <MappingFragment StoreEntitySet="ProductGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductgroupColor" ColumnName="ProductgroupColor" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="MenuPosition" ColumnName="MenuPosition" />
+          <ScalarProperty Name="CanDiscountGroup" ColumnName="CanDiscountGroup" />
+          <ScalarProperty Name="UseDriversAgeVerification" ColumnName="UseDriversAgeVerification" />
+          <ScalarProperty Name="ApplyGroupPrice" ColumnName="ApplyGroupPrice" />
+          <ScalarProperty Name="GroupPrice" ColumnName="GroupPrice" />
+          <ScalarProperty Name="OrderMenuItemsByWeight" ColumnName="OrderMenuItemsByWeight" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="OnePosModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PriceMethod" ColumnName="PriceMethod" />
+          <ScalarProperty Name="PromptForPrice" ColumnName="PromptForPrice" />
+          <ScalarProperty Name="IsGiftCard" ColumnName="IsGiftCard" />
+          <ScalarProperty Name="PricePerUnitOfWeight" ColumnName="PricePerUnitOfWeight" />
+          <ScalarProperty Name="UseWeightPricing" ColumnName="UseWeightPricing" />
+          <ScalarProperty Name="UnitOfWeightSize" ColumnName="UnitOfWeightSize" />
+          <ScalarProperty Name="CountsAsSalesRevenue" ColumnName="CountsAsSalesRevenue" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="RemoveAtZeroCount" ColumnName="RemoveAtZeroCount" />
+          <ScalarProperty Name="IsAgeRestrict" ColumnName="IsAgeRestrict" />
+          <ScalarProperty Name="IsDisplayOnBilling" ColumnName="IsDisplayOnBilling" />
+          <ScalarProperty Name="Metaproductdata" ColumnName="Metaproductdata" />
+          <ScalarProperty Name="Downtick" ColumnName="Downtick" />
+          <ScalarProperty Name="MaxFloorQty" ColumnName="MaxFloorQty" />
+          <ScalarProperty Name="MenuPosition" ColumnName="MenuPosition" />
+          <ScalarProperty Name="Sku" ColumnName="Sku" />
+          <ScalarProperty Name="Plu" ColumnName="Plu" />
+          <ScalarProperty Name="Upc" ColumnName="Upc" />
+          <ScalarProperty Name="LongName" ColumnName="LongName" />
+          <ScalarProperty Name="CalorieCount" ColumnName="CalorieCount" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="RevenueTypeId" ColumnName="RevenueTypeId" />
+          <ScalarProperty Name="OrderedRecipeId" ColumnName="OrderedRecipeId" />
+          <ScalarProperty Name="SurchargeGroupId" ColumnName="SurchargeGroupId" />
+          <ScalarProperty Name="ProductGroupPrinterId" ColumnName="ProductGroupPrinterId" />
+          <ScalarProperty Name="TaxGroupId" ColumnName="TaxGroupId" />
+          <ScalarProperty Name="InclusiveTipRateId" ColumnName="InclusiveTipRateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProfitCenters">
+      <EntityTypeMapping TypeName="OnePosModel.ProfitCenter">
+        <MappingFragment StoreEntitySet="ProfitCenters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TaxGroupId" ColumnName="TaxGroupId" />
+          <ScalarProperty Name="SurchargeGroupId" ColumnName="SurchargeGroupId" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseChildOrders">
+      <EntityTypeMapping TypeName="OnePosModel.PurchaseChildOrder">
+        <MappingFragment StoreEntitySet="PurchaseChildOrders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="SequencyNo" ColumnName="SequencyNo" />
+          <ScalarProperty Name="PurchaseOrder_Id" ColumnName="PurchaseOrder_Id" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="ProcApprPrice" ColumnName="ProcApprPrice" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Userid" ColumnName="Userid" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PurchaseOrderNumber_Id" ColumnName="PurchaseOrderNumber_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PurchaseOrders">
+      <EntityTypeMapping TypeName="OnePosModel.PurchaseOrder">
+        <MappingFragment StoreEntitySet="PurchaseOrders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="PurchaseOrderDate" ColumnName="PurchaseOrderDate" />
+          <ScalarProperty Name="Vendor_Id" ColumnName="Vendor_Id" />
+          <ScalarProperty Name="TotPOApprPrice" ColumnName="TotPOApprPrice" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsForwardToRetailer" ColumnName="IsForwardToRetailer" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EnteredOn" ColumnName="EnteredOn" />
+          <ScalarProperty Name="StoreId_Id" ColumnName="StoreId_Id" />
+          <ScalarProperty Name="VendorId_Id" ColumnName="VendorId_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeIngredients">
+      <EntityTypeMapping TypeName="OnePosModel.RecipeIngredient">
+        <MappingFragment StoreEntitySet="RecipeIngredients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="RecipeProductId" ColumnName="RecipeProductId" />
+          <ScalarProperty Name="RecipeId" ColumnName="RecipeId" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RecipeProducts">
+      <EntityTypeMapping TypeName="OnePosModel.RecipeProduct">
+        <MappingFragment StoreEntitySet="RecipeProducts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="ConversionUnit" ColumnName="ConversionUnit" />
+          <ScalarProperty Name="ContainerSize" ColumnName="ContainerSize" />
+          <ScalarProperty Name="InventoryTakingUnit" ColumnName="InventoryTakingUnit" />
+          <ScalarProperty Name="GlCodeId" ColumnName="GlCodeId" />
+          <ScalarProperty Name="Sku" ColumnName="Sku" />
+          <ScalarProperty Name="Plu" ColumnName="Plu" />
+          <ScalarProperty Name="Upc" ColumnName="Upc" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recipes">
+      <EntityTypeMapping TypeName="OnePosModel.Recipe">
+        <MappingFragment StoreEntitySet="Recipes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RevenueTypes">
+      <EntityTypeMapping TypeName="OnePosModel.RevenueType">
+        <MappingFragment StoreEntitySet="RevenueTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IncludedInNetSales" ColumnName="IncludedInNetSales" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="OnePosModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="JobCodeId" ColumnName="JobCodeId" />
+          <ScalarProperty Name="AccessLevelId" ColumnName="AccessLevelId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PayGradeId" ColumnName="PayGradeId" />
+          <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales">
+      <EntityTypeMapping TypeName="OnePosModel.Sale">
+        <MappingFragment StoreEntitySet="Sales">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsPersisted" ColumnName="IsPersisted" />
+          <ScalarProperty Name="IsSelected" ColumnName="IsSelected" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductsMainCatId" ColumnName="ProductsMainCatId" />
+          <ScalarProperty Name="CountsAsSalesRevenue" ColumnName="CountsAsSalesRevenue" />
+          <ScalarProperty Name="MenuPrice" ColumnName="MenuPrice" />
+          <ScalarProperty Name="AdjustPrice" ColumnName="AdjustPrice" />
+          <ScalarProperty Name="DiscountPrice" ColumnName="DiscountPrice" />
+          <ScalarProperty Name="IsForcedModifier" ColumnName="IsForcedModifier" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="NoteForPrint" ColumnName="NoteForPrint" />
+          <ScalarProperty Name="PrinterGroupingId" ColumnName="PrinterGroupingId" />
+          <ScalarProperty Name="OnHold" ColumnName="OnHold" />
+          <ScalarProperty Name="IsForcedProduct" ColumnName="IsForcedProduct" />
+          <ScalarProperty Name="PrintJobId" ColumnName="PrintJobId" />
+          <ScalarProperty Name="OwningSeatNumber" ColumnName="OwningSeatNumber" />
+          <ScalarProperty Name="OwningCheckNumber" ColumnName="OwningCheckNumber" />
+          <ScalarProperty Name="IsExceptionModifier" ColumnName="IsExceptionModifier" />
+          <ScalarProperty Name="ProductIsDiscountable" ColumnName="ProductIsDiscountable" />
+          <ScalarProperty Name="Sku" ColumnName="Sku" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Ordermode" ColumnName="Ordermode" />
+          <ScalarProperty Name="CountOrdered" ColumnName="CountOrdered" />
+          <ScalarProperty Name="BumpbarPreparedTime" ColumnName="BumpbarPreparedTime" />
+          <ScalarProperty Name="ProfitCenterId" ColumnName="ProfitCenterId" />
+          <ScalarProperty Name="DaypartId" ColumnName="DaypartId" />
+          <ScalarProperty Name="RevenueTypeId" ColumnName="RevenueTypeId" />
+          <ScalarProperty Name="IsWithout" ColumnName="IsWithout" />
+          <ScalarProperty Name="NoteForPrintBeforeHold" ColumnName="NoteForPrintBeforeHold" />
+          <ScalarProperty Name="HoldMinutes" ColumnName="HoldMinutes" />
+          <ScalarProperty Name="FirstOrderedDateTime" ColumnName="FirstOrderedDateTime" />
+          <ScalarProperty Name="LastOrderedDateTime" ColumnName="LastOrderedDateTime" />
+          <ScalarProperty Name="CountPendingKitchenSend" ColumnName="CountPendingKitchenSend" />
+          <ScalarProperty Name="CheckSequenceNumber" ColumnName="CheckSequenceNumber" />
+          <ScalarProperty Name="ModifierSequenceNumber" ColumnName="ModifierSequenceNumber" />
+          <ScalarProperty Name="InclusiveTipRate" ColumnName="InclusiveTipRate" />
+          <ScalarProperty Name="InclusiveTipFlatFee" ColumnName="InclusiveTipFlatFee" />
+          <ScalarProperty Name="InclusiveTipRateName" ColumnName="InclusiveTipRateName" />
+          <ScalarProperty Name="RevenueTypeName" ColumnName="RevenueTypeName" />
+          <ScalarProperty Name="SeatSequenceNumber" ColumnName="SeatSequenceNumber" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="IsSeeServer" ColumnName="IsSeeServer" />
+          <ScalarProperty Name="ApplyAutoGratToMenuPrice" ColumnName="ApplyAutoGratToMenuPrice" />
+          <ScalarProperty Name="IsGiftCardSale" ColumnName="IsGiftCardSale" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="ParentSaleWhenModSaleId" ColumnName="ParentSaleWhenModSaleId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="OnePosModel.Schedule">
+        <MappingFragment StoreEntitySet="Schedules">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="JobCodeId" ColumnName="JobCodeId" />
+          <ScalarProperty Name="BusinessDate" ColumnName="BusinessDate" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="WorkCenterId" ColumnName="WorkCenterId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shifts">
+      <EntityTypeMapping TypeName="OnePosModel.Shift">
+        <MappingFragment StoreEntitySet="Shifts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="DrawerStart" ColumnName="DrawerStart" />
+          <ScalarProperty Name="IsComplete" ColumnName="IsComplete" />
+          <ScalarProperty Name="DateStamp" ColumnName="DateStamp" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OpenDrawerCount" ColumnName="OpenDrawerCount" />
+          <ScalarProperty Name="IsLocked" ColumnName="IsLocked" />
+          <ScalarProperty Name="LastTerminalId" ColumnName="LastTerminalId" />
+          <ScalarProperty Name="MyDrawerOwnership" ColumnName="MyDrawerOwnership" />
+          <ScalarProperty Name="MyDrawerOwnerTermId" ColumnName="MyDrawerOwnerTermId" />
+          <ScalarProperty Name="IsClockedIn" ColumnName="IsClockedIn" />
+          <ScalarProperty Name="IsOnBreak" ColumnName="IsOnBreak" />
+          <ScalarProperty Name="BusinessDayId" ColumnName="BusinessDayId" />
+          <ScalarProperty Name="WorkCenterId" ColumnName="WorkCenterId" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SMSConfigurations">
+      <EntityTypeMapping TypeName="OnePosModel.SMSConfiguration">
+        <MappingFragment StoreEntitySet="SMSConfigurations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MessageType" ColumnName="MessageType" />
+          <ScalarProperty Name="DestinationOperator" ColumnName="DestinationOperator" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="ProfitCenterId" ColumnName="ProfitCenterId" />
+          <ScalarProperty Name="CellNumbersToNotify" ColumnName="CellNumbersToNotify" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpecialPays">
+      <EntityTypeMapping TypeName="OnePosModel.SpecialPay">
+        <MappingFragment StoreEntitySet="SpecialPays">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="TimeSlipId" ColumnName="TimeSlipId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreLocations">
+      <EntityTypeMapping TypeName="OnePosModel.StoreLocation">
+        <MappingFragment StoreEntitySet="StoreLocations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurchargeConfigurationClones">
+      <EntityTypeMapping TypeName="OnePosModel.SurchargeConfigurationClone">
+        <MappingFragment StoreEntitySet="SurchargeConfigurationClones">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="CorrectedAmount" ColumnName="CorrectedAmount" />
+          <ScalarProperty Name="IsFlatFee" ColumnName="IsFlatFee" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="ApplyToGrossPrice" ColumnName="ApplyToGrossPrice" />
+          <ScalarProperty Name="AppliedByEmployeeId" ColumnName="AppliedByEmployeeId" />
+          <ScalarProperty Name="IsCorrected" ColumnName="IsCorrected" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="CorrectedTaxAmount" ColumnName="CorrectedTaxAmount" />
+          <ScalarProperty Name="TaxIsCorrected" ColumnName="TaxIsCorrected" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sale_Id" ColumnName="Sale_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurchargeConfigurations">
+      <EntityTypeMapping TypeName="OnePosModel.SurchargeConfiguration">
+        <MappingFragment StoreEntitySet="SurchargeConfigurations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="AlwaysRunSurcharge" ColumnName="AlwaysRunSurcharge" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="ApplyToGrossPrice" ColumnName="ApplyToGrossPrice" />
+          <ScalarProperty Name="IsFlatFee" ColumnName="IsFlatFee" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="RunMonday" ColumnName="RunMonday" />
+          <ScalarProperty Name="RunTuesday" ColumnName="RunTuesday" />
+          <ScalarProperty Name="RunWednesday" ColumnName="RunWednesday" />
+          <ScalarProperty Name="RunThursday" ColumnName="RunThursday" />
+          <ScalarProperty Name="RunFriday" ColumnName="RunFriday" />
+          <ScalarProperty Name="RunSaturday" ColumnName="RunSaturday" />
+          <ScalarProperty Name="RunSunday" ColumnName="RunSunday" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SurchargeGroups">
+      <EntityTypeMapping TypeName="OnePosModel.SurchargeGroup">
+        <MappingFragment StoreEntitySet="SurchargeGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysConfigs">
+      <EntityTypeMapping TypeName="OnePosModel.SysConfig">
+        <MappingFragment StoreEntitySet="SysConfigs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="CanAcceptTips" ColumnName="CanAcceptTips" />
+          <ScalarProperty Name="ReceiptLine1" ColumnName="ReceiptLine1" />
+          <ScalarProperty Name="ReceiptLine2" ColumnName="ReceiptLine2" />
+          <ScalarProperty Name="ReceiptLine3" ColumnName="ReceiptLine3" />
+          <ScalarProperty Name="ReceiptLine4" ColumnName="ReceiptLine4" />
+          <ScalarProperty Name="ForceOrderOnScreenTimeout" ColumnName="ForceOrderOnScreenTimeout" />
+          <ScalarProperty Name="PrintQueueTimeout" ColumnName="PrintQueueTimeout" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="StoreCode" ColumnName="StoreCode" />
+          <ScalarProperty Name="TinNo" ColumnName="TinNo" />
+          <ScalarProperty Name="TopReceiptMessage" ColumnName="TopReceiptMessage" />
+          <ScalarProperty Name="BottomReceiptMessage" ColumnName="BottomReceiptMessage" />
+          <ScalarProperty Name="BusinessDayOfWeekStartDay" ColumnName="BusinessDayOfWeekStartDay" />
+          <ScalarProperty Name="BusinessDayStartTime" ColumnName="BusinessDayStartTime" />
+          <ScalarProperty Name="PrintEmployeeCheckWithZeroSales" ColumnName="PrintEmployeeCheckWithZeroSales" />
+          <ScalarProperty Name="CurrentBusinessDayId" ColumnName="CurrentBusinessDayId" />
+          <ScalarProperty Name="TableRecheckMinutes" ColumnName="TableRecheckMinutes" />
+          <ScalarProperty Name="AllowCardOnFile" ColumnName="AllowCardOnFile" />
+          <ScalarProperty Name="OrderTimeoutInMinutes" ColumnName="OrderTimeoutInMinutes" />
+          <ScalarProperty Name="AllowDuplicateTables" ColumnName="AllowDuplicateTables" />
+          <ScalarProperty Name="DailyHighWaterMark" ColumnName="DailyHighWaterMark" />
+          <ScalarProperty Name="EmailManagersAtHighWater" ColumnName="EmailManagersAtHighWater" />
+          <ScalarProperty Name="AutoCloseBusinessDay" ColumnName="AutoCloseBusinessDay" />
+          <ScalarProperty Name="RoundInclusiveTaxDown" ColumnName="RoundInclusiveTaxDown" />
+          <ScalarProperty Name="RoundExclusiveTaxDown" ColumnName="RoundExclusiveTaxDown" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaxConfigurationClones">
+      <EntityTypeMapping TypeName="OnePosModel.TaxConfigurationClone">
+        <MappingFragment StoreEntitySet="TaxConfigurationClones">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsFlatFee" ColumnName="IsFlatFee" />
+          <ScalarProperty Name="FlatFee" ColumnName="FlatFee" />
+          <ScalarProperty Name="IsInclusiveTax" ColumnName="IsInclusiveTax" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="CorrectedAmount" ColumnName="CorrectedAmount" />
+          <ScalarProperty Name="IsCorrected" ColumnName="IsCorrected" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Sale_Id" ColumnName="Sale_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaxConfigurations">
+      <EntityTypeMapping TypeName="OnePosModel.TaxConfiguration">
+        <MappingFragment StoreEntitySet="TaxConfigurations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="AlwaysRunTax" ColumnName="AlwaysRunTax" />
+          <ScalarProperty Name="IsInclusiveTax" ColumnName="IsInclusiveTax" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="RunMonday" ColumnName="RunMonday" />
+          <ScalarProperty Name="RunTuesday" ColumnName="RunTuesday" />
+          <ScalarProperty Name="RunWednesday" ColumnName="RunWednesday" />
+          <ScalarProperty Name="RunThursday" ColumnName="RunThursday" />
+          <ScalarProperty Name="RunFriday" ColumnName="RunFriday" />
+          <ScalarProperty Name="RunSaturday" ColumnName="RunSaturday" />
+          <ScalarProperty Name="RunSunday" ColumnName="RunSunday" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="IsFlatFee" ColumnName="IsFlatFee" />
+          <ScalarProperty Name="FlatFee" ColumnName="FlatFee" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaxGroups">
+      <EntityTypeMapping TypeName="OnePosModel.TaxGroup">
+        <MappingFragment StoreEntitySet="TaxGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TenderTypes">
+      <EntityTypeMapping TypeName="OnePosModel.TenderType">
+        <MappingFragment StoreEntitySet="TenderTypes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="AssumePaysInFull" ColumnName="AssumePaysInFull" />
+          <ScalarProperty Name="OpensCashDrawer" ColumnName="OpensCashDrawer" />
+          <ScalarProperty Name="PrintsReceipt" ColumnName="PrintsReceipt" />
+          <ScalarProperty Name="ReceiptCount" ColumnName="ReceiptCount" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsOther" ColumnName="IsOther" />
+          <ScalarProperty Name="IsCreditOther" ColumnName="IsCreditOther" />
+          <ScalarProperty Name="IsAccount" ColumnName="IsAccount" />
+          <ScalarProperty Name="IsRoom" ColumnName="IsRoom" />
+          <ScalarProperty Name="IsComp" ColumnName="IsComp" />
+          <ScalarProperty Name="IsCheck" ColumnName="IsCheck" />
+          <ScalarProperty Name="IsDomesticCurrency" ColumnName="IsDomesticCurrency" />
+          <ScalarProperty Name="PromptForCrossReference" ColumnName="PromptForCrossReference" />
+          <ScalarProperty Name="IsGift" ColumnName="IsGift" />
+          <ScalarProperty Name="ClosesCheck" ColumnName="ClosesCheck" />
+          <ScalarProperty Name="IsBuiltIn" ColumnName="IsBuiltIn" />
+          <ScalarProperty Name="IsAmex" ColumnName="IsAmex" />
+          <ScalarProperty Name="IsDiscover" ColumnName="IsDiscover" />
+          <ScalarProperty Name="DinersClub" ColumnName="DinersClub" />
+          <ScalarProperty Name="IsJcb" ColumnName="IsJcb" />
+          <ScalarProperty Name="IsMasterCard" ColumnName="IsMasterCard" />
+          <ScalarProperty Name="IsVisa" ColumnName="IsVisa" />
+          <ScalarProperty Name="IsVoid" ColumnName="IsVoid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TerminalPrinterMaps">
+      <EntityTypeMapping TypeName="OnePosModel.TerminalPrinterMap">
+        <MappingFragment StoreEntitySet="TerminalPrinterMaps">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+          <ScalarProperty Name="ProductGroupId" ColumnName="ProductGroupId" />
+          <ScalarProperty Name="PrinterGroupId" ColumnName="PrinterGroupId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Terminals">
+      <EntityTypeMapping TypeName="OnePosModel.Terminal">
+        <MappingFragment StoreEntitySet="Terminals">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="ProfitCenterId" ColumnName="ProfitCenterId" />
+          <ScalarProperty Name="ForceOrderProdId" ColumnName="ForceOrderProdId" />
+          <ScalarProperty Name="MenuGroupId" ColumnName="MenuGroupId" />
+          <ScalarProperty Name="ForceOrderProdGroupId" ColumnName="ForceOrderProdGroupId" />
+          <ScalarProperty Name="LocalPrinterId" ColumnName="LocalPrinterId" />
+          <ScalarProperty Name="NumberOfCashDrawers" ColumnName="NumberOfCashDrawers" />
+          <ScalarProperty Name="FirstCashDrawerNumber" ColumnName="FirstCashDrawerNumber" />
+          <ScalarProperty Name="OpenDrawerOnPay" ColumnName="OpenDrawerOnPay" />
+          <ScalarProperty Name="SystemComFlags" ColumnName="SystemComFlags" />
+          <ScalarProperty Name="CreateAutoSeats" ColumnName="CreateAutoSeats" />
+          <ScalarProperty Name="PrintItemizedReceiptOnPay" ColumnName="PrintItemizedReceiptOnPay" />
+          <ScalarProperty Name="PrintCashReceiptOnPay" ColumnName="PrintCashReceiptOnPay" />
+          <ScalarProperty Name="UseProductGroupPrinterMapping" ColumnName="UseProductGroupPrinterMapping" />
+          <ScalarProperty Name="ForceCashDrop" ColumnName="ForceCashDrop" />
+          <ScalarProperty Name="ForceCashDropAmount" ColumnName="ForceCashDropAmount" />
+          <ScalarProperty Name="PrintCreditReceiptOnPay" ColumnName="PrintCreditReceiptOnPay" />
+          <ScalarProperty Name="PrintGiftReceiptOnPay" ColumnName="PrintGiftReceiptOnPay" />
+          <ScalarProperty Name="NumberCashReceipts" ColumnName="NumberCashReceipts" />
+          <ScalarProperty Name="NumberCreditReceipts" ColumnName="NumberCreditReceipts" />
+          <ScalarProperty Name="NumberGiftReceipts" ColumnName="NumberGiftReceipts" />
+          <ScalarProperty Name="IsQuickServiceMode" ColumnName="IsQuickServiceMode" />
+          <ScalarProperty Name="CustomerDisplayLineOne" ColumnName="CustomerDisplayLineOne" />
+          <ScalarProperty Name="CustomerDisplayLineTwo" ColumnName="CustomerDisplayLineTwo" />
+          <ScalarProperty Name="CustomerDisplayComport" ColumnName="CustomerDisplayComport" />
+          <ScalarProperty Name="ScaleComport" ColumnName="ScaleComport" />
+          <ScalarProperty Name="EnableCustomerDisplay" ColumnName="EnableCustomerDisplay" />
+          <ScalarProperty Name="UseOrderLabel" ColumnName="UseOrderLabel" />
+          <ScalarProperty Name="HasPaymentGateway" ColumnName="HasPaymentGateway" />
+          <ScalarProperty Name="ScreenSaverTimeoutSeconds" ColumnName="ScreenSaverTimeoutSeconds" />
+          <ScalarProperty Name="ShowMouseCursor" ColumnName="ShowMouseCursor" />
+          <ScalarProperty Name="EnableCardLogin" ColumnName="EnableCardLogin" />
+          <ScalarProperty Name="ShowTerminalLockedOnCfd" ColumnName="ShowTerminalLockedOnCfd" />
+          <ScalarProperty Name="CustomPrintImagePath" ColumnName="CustomPrintImagePath" />
+          <ScalarProperty Name="CustomScreenImagePath" ColumnName="CustomScreenImagePath" />
+          <ScalarProperty Name="CustomLogoImagePath" ColumnName="CustomLogoImagePath" />
+          <ScalarProperty Name="RebootOnHouseClose" ColumnName="RebootOnHouseClose" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProcessorConfiguration_Id" ColumnName="ProcessorConfiguration_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimePunches">
+      <EntityTypeMapping TypeName="OnePosModel.TimePunch">
+        <MappingFragment StoreEntitySet="TimePunches">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="ClockedIn" ColumnName="ClockedIn" />
+          <ScalarProperty Name="ClockedOut" ColumnName="ClockedOut" />
+          <ScalarProperty Name="ClockedInDaypartId" ColumnName="ClockedInDaypartId" />
+          <ScalarProperty Name="ClockedOutDaypartId" ColumnName="ClockedOutDaypartId" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="ClockedInTerminalId" ColumnName="ClockedInTerminalId" />
+          <ScalarProperty Name="ClockedOutTerminalId" ColumnName="ClockedOutTerminalId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProfitCenterId" ColumnName="ProfitCenterId" />
+          <ScalarProperty Name="CashTipsClaimed" ColumnName="CashTipsClaimed" />
+          <ScalarProperty Name="WasAutoClockedOut" ColumnName="WasAutoClockedOut" />
+          <ScalarProperty Name="SpecialPayId" ColumnName="SpecialPayId" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="PayGradeName" ColumnName="PayGradeName" />
+          <ScalarProperty Name="WageRate" ColumnName="WageRate" />
+          <ScalarProperty Name="TipTaxRate" ColumnName="TipTaxRate" />
+          <ScalarProperty Name="IsSalaried" ColumnName="IsSalaried" />
+          <ScalarProperty Name="OtAppliedByDayHours" ColumnName="OtAppliedByDayHours" />
+          <ScalarProperty Name="WageRateOnOverTime" ColumnName="WageRateOnOverTime" />
+          <ScalarProperty Name="BreaksArePaid" ColumnName="BreaksArePaid" />
+          <ScalarProperty Name="OtHoursThreshold" ColumnName="OtHoursThreshold" />
+          <ScalarProperty Name="IsEligibleForOvertimePay" ColumnName="IsEligibleForOvertimePay" />
+          <ScalarProperty Name="JobType" ColumnName="JobType" />
+          <ScalarProperty Name="JobCodeName" ColumnName="JobCodeName" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="OnePosModel.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="UserTimePunchId" ColumnName="UserTimePunchId" />
+          <ScalarProperty Name="HumanReadableTranId" ColumnName="HumanReadableTranId" />
+          <ScalarProperty Name="WasVoided" ColumnName="WasVoided" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="Base" ColumnName="Base" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="TypeOfTransaction" ColumnName="TypeOfTransaction" />
+          <ScalarProperty Name="CrossReference" ColumnName="CrossReference" />
+          <ScalarProperty Name="OpenDateStamp" ColumnName="OpenDateStamp" />
+          <ScalarProperty Name="WasAutoTipped" ColumnName="WasAutoTipped" />
+          <ScalarProperty Name="TenderMemo" ColumnName="TenderMemo" />
+          <ScalarProperty Name="PaidAtRevenueCenterId" ColumnName="PaidAtRevenueCenterId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="OwningCheckNumber" ColumnName="OwningCheckNumber" />
+          <ScalarProperty Name="LastModifiedDateStamp" ColumnName="LastModifiedDateStamp" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Gratuity" ColumnName="Gratuity" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+          <ScalarProperty Name="ExtId" ColumnName="ExtId" />
+          <ScalarProperty Name="LastModifiedUserId" ColumnName="LastModifiedUserId" />
+          <ScalarProperty Name="IsBatched" ColumnName="IsBatched" />
+          <ScalarProperty Name="BusinessDayId" ColumnName="BusinessDayId" />
+          <ScalarProperty Name="CreditCardTipFee" ColumnName="CreditCardTipFee" />
+          <ScalarProperty Name="TerminalId" ColumnName="TerminalId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="HouseAccountId" ColumnName="HouseAccountId" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TenderType_Id" ColumnName="TenderType_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="OnePosModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="ScreenName" ColumnName="ScreenName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="Ssn" ColumnName="Ssn" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="HiredDate" ColumnName="HiredDate" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="LoginBohPassword" ColumnName="LoginBohPassword" />
+          <ScalarProperty Name="LoginKeyPassword" ColumnName="LoginKeyPassword" />
+          <ScalarProperty Name="LoginMagPassword" ColumnName="LoginMagPassword" />
+          <ScalarProperty Name="IsTerminated" ColumnName="IsTerminated" />
+          <ScalarProperty Name="OldBohPassword1" ColumnName="OldBohPassword1" />
+          <ScalarProperty Name="OldBohPassword2" ColumnName="OldBohPassword2" />
+          <ScalarProperty Name="OldBohPassword3" ColumnName="OldBohPassword3" />
+          <ScalarProperty Name="OldBohPassword4" ColumnName="OldBohPassword4" />
+          <ScalarProperty Name="BohPasswordDate" ColumnName="BohPasswordDate" />
+          <ScalarProperty Name="BohPasswordAttempts" ColumnName="BohPasswordAttempts" />
+          <ScalarProperty Name="BohSecretQuestion" ColumnName="BohSecretQuestion" />
+          <ScalarProperty Name="BohSecretAnswer" ColumnName="BohSecretAnswer" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="BohLockoutDate" ColumnName="BohLockoutDate" />
+          <ScalarProperty Name="ExternalPayrollId" ColumnName="ExternalPayrollId" />
+          <ScalarProperty Name="TerminationDate" ColumnName="TerminationDate" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="FingerPasswordId" ColumnName="FingerPasswordId" />
+          <ScalarProperty Name="AltPhone" ColumnName="AltPhone" />
+          <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="IsTraining" ColumnName="IsTraining" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="TimePunch_Id" ColumnName="TimePunch_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorAccounts">
+      <EntityTypeMapping TypeName="OnePosModel.VendorAccount">
+        <MappingFragment StoreEntitySet="VendorAccounts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="AccountNumber" ColumnName="AccountNumber" />
+          <ScalarProperty Name="IFSCCode" ColumnName="IFSCCode" />
+          <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="AccountLimit" ColumnName="AccountLimit" />
+          <ScalarProperty Name="AccountTerms" ColumnName="AccountTerms" />
+          <ScalarProperty Name="HasNoHighLimit" ColumnName="HasNoHighLimit" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="VendorType" ColumnName="VendorType" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SysConfig_Id" ColumnName="SysConfig_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendorProducts">
+      <EntityTypeMapping TypeName="OnePosModel.VendorProduct">
+        <MappingFragment StoreEntitySet="VendorProducts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="VendorAccountId" ColumnName="VendorAccountId" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PurchaseChildOrder_Id" ColumnName="PurchaseChildOrder_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkCenters">
+      <EntityTypeMapping TypeName="OnePosModel.WorkCenter">
+        <MappingFragment StoreEntitySet="WorkCenters">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ExtendedBoolTableId" ColumnName="ExtendedBoolTableId" />
+          <ScalarProperty Name="ExtendedStringTableId" ColumnName="ExtendedStringTableId" />
+          <ScalarProperty Name="ExtendedDecimalTableId" ColumnName="ExtendedDecimalTableId" />
+          <ScalarProperty Name="ExtendedIntTableId" ColumnName="ExtendedIntTableId" />
+          <ScalarProperty Name="ExtendedLinkTable1Id" ColumnName="ExtendedLinkTable1Id" />
+          <ScalarProperty Name="ExtendedLinkTable2Id" ColumnName="ExtendedLinkTable2Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ASSN_EMG_EM" TypeName="OnePosModel.ASSN_EMG_EM" StoreEntitySet="ASSN_EMG_EM">
+      <EndProperty Name="ExceptionModifierGroups">
+        <ScalarProperty Name="Id" ColumnName="ExceptionModifierGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="ExceptionModifiers">
+        <ScalarProperty Name="Id" ColumnName="ExceptionModifier_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_FMG_FM" TypeName="OnePosModel.ASSN_FMG_FM" StoreEntitySet="ASSN_FMG_FM">
+      <EndProperty Name="ForcedModifierGroups">
+        <ScalarProperty Name="Id" ColumnName="ForcedModifierGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="ForcedModifiers">
+        <ScalarProperty Name="Id" ColumnName="ForcedModifier_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_K_AG" TypeName="OnePosModel.ASSN_K_AG" StoreEntitySet="ASSN_K_AG">
+      <EndProperty Name="AutoGratuities">
+        <ScalarProperty Name="Id" ColumnName="AutoGratuity_Id" />
+      </EndProperty>
+      <EndProperty Name="Terminals">
+        <ScalarProperty Name="Id" ColumnName="Terminal_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_MENU_MG" TypeName="OnePosModel.ASSN_MENU_MG" StoreEntitySet="ASSN_MENU_MG">
+      <EndProperty Name="MenuGroups">
+        <ScalarProperty Name="Id" ColumnName="MenuGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="Menus">
+        <ScalarProperty Name="Id" ColumnName="Menu_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_MENU_PG" TypeName="OnePosModel.ASSN_MENU_PG" StoreEntitySet="ASSN_MENU_PG">
+      <EndProperty Name="Menus">
+        <ScalarProperty Name="Id" ColumnName="Menu_Id" />
+      </EndProperty>
+      <EndProperty Name="ProductGroups">
+        <ScalarProperty Name="Id" ColumnName="ProductGroup_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_PC_PGTS" TypeName="OnePosModel.ASSN_PC_PGTS" StoreEntitySet="ASSN_PC_PGTS">
+      <EndProperty Name="ProductGroups">
+        <ScalarProperty Name="Id" ColumnName="ProductGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="ProfitCenters">
+        <ScalarProperty Name="Id" ColumnName="ProfitCenter_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_PC_PGTT" TypeName="OnePosModel.ASSN_PC_PGTT" StoreEntitySet="ASSN_PC_PGTT">
+      <EndProperty Name="ProductGroups">
+        <ScalarProperty Name="Id" ColumnName="ProductGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="ProfitCenters">
+        <ScalarProperty Name="Id" ColumnName="ProfitCenter_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_PG_EMG" TypeName="OnePosModel.ASSN_PG_EMG" StoreEntitySet="ASSN_PG_EMG">
+      <EndProperty Name="ExceptionModifierGroups">
+        <ScalarProperty Name="Id" ColumnName="ExceptionModifierGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="ProductGroups">
+        <ScalarProperty Name="Id" ColumnName="ProductGroup_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_PG_PID" TypeName="OnePosModel.ASSN_PG_PID" StoreEntitySet="ASSN_PG_PID">
+      <EndProperty Name="PriceIntervalDiscounts">
+        <ScalarProperty Name="Id" ColumnName="PriceIntervalDiscount_Id" />
+      </EndProperty>
+      <EndProperty Name="ProductGroups">
+        <ScalarProperty Name="Id" ColumnName="ProductGroup_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_PG_PRINTER" TypeName="OnePosModel.ASSN_PG_PRINTER" StoreEntitySet="ASSN_PG_PRINTER">
+      <EndProperty Name="PrinterGroups">
+        <ScalarProperty Name="Id" ColumnName="PrinterGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="Printers">
+        <ScalarProperty Name="Id" ColumnName="Printer_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_PROD_FMG" TypeName="OnePosModel.ASSN_PROD_FMG" StoreEntitySet="ASSN_PROD_FMG">
+      <EndProperty Name="ForcedModifierGroups">
+        <ScalarProperty Name="Id" ColumnName="ForcedModifierGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="Products">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_PROD_PG" TypeName="OnePosModel.ASSN_PROD_PG" StoreEntitySet="ASSN_PROD_PG">
+      <EndProperty Name="ProductGroups">
+        <ScalarProperty Name="Id" ColumnName="ProductGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="Products">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_SURCFG_SG" TypeName="OnePosModel.ASSN_SURCFG_SG" StoreEntitySet="ASSN_SURCFG_SG">
+      <EndProperty Name="SurchargeConfigurations">
+        <ScalarProperty Name="Id" ColumnName="SurchargeConfiguration_Id" />
+      </EndProperty>
+      <EndProperty Name="SurchargeGroups">
+        <ScalarProperty Name="Id" ColumnName="SurchargeGroup_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ASSN_TAXCFG_TG" TypeName="OnePosModel.ASSN_TAXCFG_TG" StoreEntitySet="ASSN_TAXCFG_TG">
+      <EndProperty Name="TaxConfigurations">
+        <ScalarProperty Name="Id" ColumnName="TaxConfiguration_Id" />
+      </EndProperty>
+      <EndProperty Name="TaxGroups">
+        <ScalarProperty Name="Id" ColumnName="TaxGroup_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="SaleAutoGratuityClones" TypeName="OnePosModel.SaleAutoGratuityClones" StoreEntitySet="SaleAutoGratuityClones">
+      <EndProperty Name="AutoGratuityClones">
+        <ScalarProperty Name="Id" ColumnName="AutoGratuityClone_Id" />
+      </EndProperty>
+      <EndProperty Name="Sales">
+        <ScalarProperty Name="Id" ColumnName="Sale_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="OnePosStoreStatus">
+      <EntityTypeMapping TypeName="OnePosModel.OnePosStoreStatu">
+        <MappingFragment StoreEntitySet="OnePosStoreStatus">
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OnePosStores">
+      <EntityTypeMapping TypeName="OnePosModel.OnePosStore">
+        <MappingFragment StoreEntitySet="OnePosStores">
+          <ScalarProperty Name="StoreStatus" ColumnName="StoreStatus" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
+          <ScalarProperty Name="AdminUsername" ColumnName="AdminUsername" />
+          <ScalarProperty Name="LicenseExpiry" ColumnName="LicenseExpiry" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="StoreAddress" ColumnName="StoreAddress" />
+          <ScalarProperty Name="StoreUniqueKey" ColumnName="StoreUniqueKey" />
+          <ScalarProperty Name="StoreOwnerName" ColumnName="StoreOwnerName" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

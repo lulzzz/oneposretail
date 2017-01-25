@@ -1,0 +1,13 @@
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\OnePos.DataCollector.dll
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\OnePos.DataCollector.pdb
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\Newtonsoft.Json.dll
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\OnePos.Domain.dll
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\OnePos.Message.dll
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\OnePos.Framework.ServiceModel.dll
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\Newtonsoft.Json.xml
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\OnePos.Domain.pdb
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\OnePos.Message.pdb
+D:\OnePos_New\OnePos\OnePos.DataCollector\bin\Debug\OnePos.Framework.ServiceModel.pdb
+D:\OnePos_New\OnePos\OnePos.DataCollector\obj\Debug\OnePos.DataCollector.dll
+D:\OnePos_New\OnePos\OnePos.DataCollector\obj\Debug\OnePos.DataCollector.pdb
+D:\OnePos_New\OnePos\OnePos.DataCollector\obj\Debug\OnePos.DataCollector.csprojResolveAssemblyReference.cache

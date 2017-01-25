@@ -1,0 +1,6 @@
+D:\OnePos_New\OnePos\OnePos.Message\bin\Debug\OnePos.Message.dll
+D:\OnePos_New\OnePos\OnePos.Message\bin\Debug\OnePos.Message.pdb
+D:\OnePos_New\OnePos\OnePos.Message\bin\Debug\OnePos.Framework.ServiceModel.dll
+D:\OnePos_New\OnePos\OnePos.Message\bin\Debug\OnePos.Framework.ServiceModel.pdb
+D:\OnePos_New\OnePos\OnePos.Message\obj\Debug\OnePos.Message.dll
+D:\OnePos_New\OnePos\OnePos.Message\obj\Debug\OnePos.Message.pdb
