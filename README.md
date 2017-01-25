@@ -1,0 +1,2 @@
+# oneposretail
+OnePOS Retails application
