@@ -21,7 +21,7 @@ namespace OnePos.Persistance
     public interface IOnePosEntities : IDisposable
     {
     
-    
+    //testing
     	
         int? CommandTimeout { get; set; }
     
