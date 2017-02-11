@@ -10,13 +10,16 @@ using OnePos.Persistance;
 using log4net;
 using System.Diagnostics;
 using System.Data;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
 //using System.Data.OracleClient; 
 using OnePos.DataCollector;
 using System.Configuration;
 using System.Globalization;
 using System.IO;
 using System.Text;
+using OnePos.Domain.Encryption;
+using OnePos.MessageService;
+
 namespace OnePos.ServerApplicationService.BackgroundService
 {
     partial class StoreSetupService : ServiceBase
@@ -92,18 +95,23 @@ namespace OnePos.ServerApplicationService.BackgroundService
                 {
                     using (var context = _contextFactory.Create())
                     {
+                        var dataSourceName = "himasankar-pc"; 
+                        var dbUserName = "sa";
+                        var dbPassword = "12345";                       
+
+                        TwoWayEncryptionDecryption Encrypt = new TwoWayEncryptionDecryption();
                         var objectContext = ((IObjectContextAdapter)context).ObjectContext;
                         objectContext.CommandTimeout = 0;
 
                         var processingStatuses = new List<OnePosStoreStatusEnum>
                                 {
                                     OnePosStoreStatusEnum.Queued,
-                                    OnePosStoreStatusEnum.DataCopying,
-                                    OnePosStoreStatusEnum.DatabaseCreating
+                                    //OnePosStoreStatusEnum.DataCopying,
+                                    //OnePosStoreStatusEnum.DatabaseCreating
                                 }.Select(x => (int)x).ToArray();
 
-                        var storeInfo = context.OnePosStores.OrderBy(x => x.ID)
-                            .FirstOrDefault(x => processingStatuses.Any(y => y == x.StoreStatus));
+                        var storeInfo = context.GetOnePosStores().AsEnumerable().OrderBy(x => (long)x["ID"])
+                            .FirstOrDefault(x => processingStatuses.Any(y => y == (int)x["StoreStatus"])); 
 
                         if (storeInfo == null)
                         {
@@ -111,207 +119,111 @@ namespace OnePos.ServerApplicationService.BackgroundService
                             continue;
                         } 
 
-                        if (storeInfo.StoreStatus == (int)OnePosStoreStatusEnum.Queued)
+                        if ((int)storeInfo["StoreStatus"] == (int)OnePosStoreStatusEnum.Queued)
                         {
+                          
+                            context.UpdateOnePosStoreStatus((long)storeInfo["ID"], (int)OnePosStoreStatusEnum.DatabaseCreating);
 
-                            //if (!RunImport(context, submission))
-                            //{
-                            //    Thread.Sleep(new TimeSpan(0, 0, 10));
-                            //    continue;
-                            //}
-
-                            string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
-                            GetDatabaseInfo info = new GetDatabaseInfo();
-                            IDatabase db = info.GetDatabase("SqlServer", connectionString);
-                            DateTime expiryDate = db.GetExpiryDate(connectionString);
-                            DateTime currentDate = new DateTime(DateTime.Now.Date.Year, DateTime.Now.Date.Month, DateTime.Now.Date.Day);
-                            //if (currentDate <= expiryDate)
-                            //{
-
-                            //    var recordDuration = Stopwatch.StartNew();
-                            //    var submissionData = submission.SubmissionDatas
-                            //                            .First(x => x.Id == submission.CurrentSubmissionDataId);
-
-                            //    _log.Info(String.Format("Get current submission duration: {0} seconds", recordDuration.Elapsed.Seconds));
-                            //    recordDuration.Restart();
+                            var storetypeExistingDBInfo = context.GetOnePosStoreDatabases().AsEnumerable().Where(x => (int)x["StoreTypeId"] == (int)storeInfo["StoreTypeId"]).ToList();
 
 
-                            //    var submissionDataSetId = submission.DataSetId;
-                            //    var submissionId = submission.Id;
-                            //    var totalColumns = context.DataSetColumns
-                            //                        .Where(x => x.DataSetId == submissionDataSetId)
-                            //                        .Select(c => c.ColumnTypeId).Distinct().Count();
-                            //    var totalGroups = context.BusinessRules
-                            //                        .Where(x => x.BusinessRuleGroup.DataSetId == submissionDataSetId)
-                            //                        .Count(x => x.IsEnabled);
-                            //    var totalBusinessRules = totalColumns + totalGroups;
+                            if (storetypeExistingDBInfo.Count <= 0)
+                            {
+                                var DBName = context.GetOnePosStoreTypes().AsEnumerable().Where(x => (int)x["StoreTypeId"] == (int)storeInfo["StoreTypeId"]).FirstOrDefault().Field<string>("VerticalDatabaseName");
+                                var newMainDBName = DBName + "_MainDB";
+                                var newBackupDBName = DBName + "_BackupDB";
 
-                            //    _log.Info(String.Format("Get total validation rules duration: {0} seconds", recordDuration.Elapsed.Seconds));
-                            //    recordDuration.Restart();
+                                var tpath = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location).Replace(@"\bin\Debug", string.Empty); ;
 
-                            //    var totalDataRows = context.SubmissionDataRows.Count(x => x.SubmissionDataId == submissionId);
+                                FileInfo file = new FileInfo(tpath + "\\DBScript\\oneposSchema.sql");
+                                string script = file.OpenText().ReadToEnd();
+                                var newMainDBscript = "use [" + newMainDBName + "]" + script;
+                                var newBackupDBscript = "use [" + newBackupDBName + "]" + script;
 
-                            //    _log.Info(String.Format("Get total submission data rows duration: {0} seconds", recordDuration.Elapsed.Seconds));
-                            //    recordDuration.Stop();
+                                SqlConnectionStringBuilder connectionstring = new SqlConnectionStringBuilder();
+                                connectionstring.InitialCatalog = "master";
+                                connectionstring.DataSource = dataSourceName;
+                                connectionstring.UserID = dbUserName;
+                                connectionstring.Password = dbPassword;
+                                string connectionString = connectionstring.ConnectionString;// ConfigurationManager.ConnectionStrings["MasterDBConnectionString"].ToString();
+                                GetDatabaseInfo info = new GetDatabaseInfo();
+                                IDatabase db = info.GetDatabase("SqlServer", connectionString);
 
-                            //    submission.StartBusinessRuleExecution();
-                            //    context.SaveChanges();
+                                var IsExecuted = db.ExecuteSQLQuery("CREATE DATABASE " + newMainDBName);
+                                if (IsExecuted == true)
+                                    _log.Info(String.Format("Main database {0} has been created", newMainDBName));
+                                else
+                                    _log.Error(String.Format("Main database {0} creation failed", newMainDBName));
 
-                            //    var index = RunSystemBusinessRuleValidation(context,
-                            //                                                submission,
-                            //                                                submissionData,
-                            //                                                totalBusinessRules,
-                            //                                                totalDataRows,
-                            //                                                0);
-                            //    RunUserDefinedBusinessRuleValidation(context,
-                            //                                            submission,
-                            //                                            submissionData,
-                            //                                            totalBusinessRules,
-                            //                                            totalDataRows,
-                            //                                            index);
+                                IsExecuted = db.ExecuteSQLQuery("CREATE DATABASE " + newBackupDBName);
 
-                            //    if (submission.SubmissionStatusId != (int)SubmissionStatusEnum.FailedToImport &&
-                            //        submission.SubmissionStatusId != (int)SubmissionStatusEnum.FailedToValidate)
-                            //        submission.Complete();
-                            //    context.SaveChanges();
+                                if (IsExecuted == true)
+                                    _log.Info(String.Format("Backup database {0} has been created", newBackupDBName));
+                                else
+                                    _log.Error(String.Format("Backup database {0} creation failed", newBackupDBName));
 
 
-                            //    //Execute Auto-Export functionality///////
-                            //    if (submission.ExportTemplateId != null && submission.SubmissionStatusId != (int)SubmissionStatusEnum.FailedToValidate)
-                            //    {
-                            //        bool isRunAutoExport = true;
+                                _log.Info(String.Format("Creating schema for {0}", newMainDBName));
+                                IsExecuted = db.ExecuteSQLQuery(newMainDBscript);
 
-                            //        if (submission.IsAutoExportAfterRuleFails == false)
-                            //        {
-                            //            isRunAutoExport = true;
-                            //        }
-                            //        else
-                            //        {
-                            //            var faildresults = context.SubmissionResults.Where(x => x.SubmissionDataId == submission.CurrentSubmissionDataId &&
-                            //                                                                  x.BusinessRuleId > 4 && x.IsValid == false).ToList();
-                            //            if (faildresults.Count == 0)
-                            //            {
-                            //                isRunAutoExport = true;
-                            //            }
-                            //            else { isRunAutoExport = false; }
-                            //        }
+                                if (IsExecuted == true)
+                                {
+                                    _log.Info(String.Format("Database schema has been created successfully for {0}.", newMainDBName));
+                                    context.CreateVerticalDatabaseConnections(dataSourceName, newMainDBName, dbUserName, Encrypt.Encrypt(dbUserName), (int)storeInfo["StoreTypeId"], 1);
+                                }
+                                else
+                                    _log.Error(String.Format("Database schema creation failed for {0}.", newMainDBName));
 
 
-                            //        if (isRunAutoExport == true)
-                            //        {
-                            //            var exportDefination = context.ExportTemplates.FirstOrDefault(x => x.Id == submission.ExportTemplateId);
-                            //            if (exportDefination != null)
-                            //            {
-                            //                exportDefination.LastExecutedOn = DateTime.Now;
-                            //                context.SaveChanges();
-                            //            }
+                                _log.Info(String.Format("Creating schema for {0}", newBackupDBName));
+                                IsExecuted = db.ExecuteSQLQuery(newBackupDBscript);
 
-                            //            var fileType = 20;
+                                if (IsExecuted == true) {
+                                    _log.Info(String.Format("Database schema has been created successfully for {0}.", newBackupDBName));
+                                    context.CreateVerticalDatabaseConnections(dataSourceName, newBackupDBName, dbUserName, Encrypt.Encrypt(dbUserName), (int)storeInfo["StoreTypeId"], 0);
+                                }  
+                                else
+                                    _log.Error(String.Format("Database schema creation failed for {0}.", newBackupDBName));
 
-                            //            int contentType = exportDefination.ReportExportType == 1 ? 64 : 128;
+                                if (IsExecuted == true)
+                                {
+                                    var storetypeExistingDBInfoNew = context.GetOnePosStoreDatabases().AsEnumerable().Where(x => (int)x["StoreTypeId"] == (int)storeInfo["StoreTypeId"]).ToList();
 
-                            //            var firewallRuleIds = new List<long>();
-                            //            var submissionData_autoexport = context.SubmissionDatas.SingleOrDefault(x => x.Id == submission.CurrentSubmissionDataId);
+                                    var MainDBConnectionID = storetypeExistingDBInfoNew.Where(x => (bool)x["IsMainDB"] == true).FirstOrDefault().Field<int>("ConnectionId");
+                                    var BackupDBConnectionID = storetypeExistingDBInfoNew.Where(x => (bool)x["IsMainDB"] == false).FirstOrDefault().Field<int>("ConnectionId");
+                                    context.UpdateOnePosStoreDatabaseConnections((long)storeInfo["ID"], MainDBConnectionID, BackupDBConnectionID); 
 
-                            //            if (!(submissionData_autoexport == null))
-                            //            {
+                                    context.UpdateOnePosStoreStatus((long)storeInfo["ID"], (int)OnePosStoreStatusEnum.SetupCompleted);
 
-                            //                if (!((ExportFileTypeEnum)fileType == ExportFileTypeEnum.FixedWidth &&
-                            //                    submissionData_autoexport.ExecutedWithDataSet.DataSetColumns.Any(x => x.Length == 0)))
-                            //                {
+                                    //SEND EMAIL TO STORE OWNER WITH LOGIN CREADENTIALS FOR ADMIN PANEL.////////
 
-                            //                    var submissionResultExport =
-                            //                        context.SubmissionResultExports.SingleOrDefault(x => x.SubmissionDataId == submission.CurrentSubmissionDataId
-                            //                                                                             && x.ExportContentTypeId == (int)contentType
-                            //                                                                             && x.ExportFileTypeId == (int)fileType) ??
-                            //                        new SubmissionResultExport { SubmissionData = submissionData };
-                            //                    // var submissionResultExport = new SubmissionResultExport { SubmissionData = submissionData };
+                                    GetMessageServiceInfo getmessageserviceinfo = new GetMessageServiceInfo();
+                                    IMessageServices imessageservices = getmessageserviceinfo.GetMessageService("Email");
+                                    var isMessageSent = imessageservices.SendMessage("OnePos retail login details.", string.Format("Hi {0}, \n\n\tOnePOS retail account has been created successfully. Please use the following creadentials to access admin panel.\n\n Admin panel url : www.oneposretail.com \n UserName : {1} \n Password : {2}", storeInfo["StoreOwnerName"].ToString(), storeInfo["AdminUsername"].ToString(), Encrypt.Decrypt(storeInfo["AdminPassword"].ToString())), storeInfo["EmailId"].ToString());
+                                    _log.Info(String.Format("Database setup has been completed for {0}", storeInfo["StoreName"]));
+                                }
+                                else
+                                {
+                                    context.UpdateOnePosStoreStatus((long)storeInfo["ID"], (int)OnePosStoreStatusEnum.Failed);
+                                    _log.Error(String.Format("Database setup failed for {0}.", storeInfo["StoreName"]));
+                                }
+                              
+                            }
+                            else
+                            {
+                                var MainDBConnectionID = storetypeExistingDBInfo.Where(x => (bool)x["IsMainDB"] == true).FirstOrDefault().Field<int>("ConnectionId");
+                                var BackupDBConnectionID = storetypeExistingDBInfo.Where(x => (bool)x["IsMainDB"] == false).FirstOrDefault().Field<int>("ConnectionId");
+                                context.UpdateOnePosStoreDatabaseConnections((long)storeInfo["ID"], MainDBConnectionID, BackupDBConnectionID);
 
-                            //                    var firewallRules = submissionData_autoexport.ExecutedWithDataSet.FirewallRules.Where(x => !firewallRuleIds.Contains(x.Id)).ToList();
-                            //                    submissionResultExport.Queued((long)submission.CurrentSubmissionDataId, (ExportContentTypeEnum)contentType, (ExportFileTypeEnum)fileType, firewallRules, exportDefination.TableName, (int)submission.ExportTemplateId, false, "");
-                            //                    var newRecord = submissionResultExport.Id == 0 ? context.SubmissionResultExports.Add(submissionResultExport) : submissionResultExport;
-                            //                    context.SaveChanges();
-                            //                }
-                            //            }
-                            //        }
-                            //        //return newRecord.Id;  
-                            //    }
+                                context.UpdateOnePosStoreStatus((long)storeInfo["ID"], (int)OnePosStoreStatusEnum.SetupCompleted);
 
-                            //    //Execute Second Auto-Export functionality///////
-                            //    if (submission.SecondExportTemplateId != null && submission.SubmissionStatusId != (int)SubmissionStatusEnum.FailedToValidate)
-                            //    {
-                            //        bool isRunAutoExport = true;
+                                //SEND EMAIL TO STORE OWNER WITH LOGIN CREADENTIALS FOR ADMIN PANEL.////////
 
-                            //        if (submission.IsAutoExportAfterRuleFails == false)
-                            //        {
-                            //            isRunAutoExport = true;
-                            //        }
-                            //        else
-                            //        {
-                            //            var faildresults = context.SubmissionResults.Where(x => x.SubmissionDataId == submission.CurrentSubmissionDataId &&
-                            //                                                                  x.BusinessRuleId > 4 && (x.IsValid == true)).ToList();
-                            //            if (faildresults.Count == 0)
-                            //            {
-                            //                isRunAutoExport = true;
-                            //            }
-                            //            else { isRunAutoExport = false; }
-                            //        }
-
-
-                            //        if (isRunAutoExport == true)
-                            //        {
-                            //            var exportDefination = context.ExportTemplates.FirstOrDefault(x => x.Id == submission.SecondExportTemplateId);
-                            //            if (exportDefination != null)
-                            //            {
-                            //                exportDefination.LastExecutedOn = DateTime.Now;
-                            //                context.SaveChanges();
-                            //            }
-
-                            //            var fileType = 20;
-
-                            //            int contentType = exportDefination.ReportExportType == 1 ? 64 : 128;
-
-                            //            var firewallRuleIds = new List<long>();
-                            //            var submissionData_autoexport = context.SubmissionDatas.SingleOrDefault(x => x.Id == submission.CurrentSubmissionDataId);
-
-                            //            if (!(submissionData_autoexport == null))
-                            //            {
-
-                            //                if (!((ExportFileTypeEnum)fileType == ExportFileTypeEnum.FixedWidth &&
-                            //                    submissionData_autoexport.ExecutedWithDataSet.DataSetColumns.Any(x => x.Length == 0)))
-                            //                {
-
-                            //                    var submissionResultExport =
-                            //                        context.SubmissionResultExports.SingleOrDefault(x => x.SubmissionDataId == submission.CurrentSubmissionDataId
-                            //                                                                             && x.ExportContentTypeId == (int)contentType
-                            //                                                                             && x.ExportFileTypeId == (int)fileType) ??
-                            //                        new SubmissionResultExport { SubmissionData = submissionData };
-                            //                    // var submissionResultExport = new SubmissionResultExport { SubmissionData = submissionData };
-
-                            //                    var firewallRules = submissionData_autoexport.ExecutedWithDataSet.FirewallRules.Where(x => !firewallRuleIds.Contains(x.Id)).ToList();
-                            //                    submissionResultExport.Queued((long)submission.CurrentSubmissionDataId, (ExportContentTypeEnum)contentType, (ExportFileTypeEnum)fileType, firewallRules, exportDefination.TableName, (int)submission.SecondExportTemplateId, false, "");
-                            //                    var newRecord = submissionResultExport.Id == 0 ? context.SubmissionResultExports.Add(submissionResultExport) : submissionResultExport;
-                            //                    context.SaveChanges();
-                            //                }
-                            //            }
-                            //        }
-                            //        //return newRecord.Id;  
-                            //    }
-
-                            //    ///////////////////////////////////////////////////////////////////
-                            //    //// DETAILED SUBMISSION RESULTS FUNCTIONALITY.//////////////////// 
-                            //    // var queryDetailsResults = BusinessRulesResultsDetailExportQueryableCopy(context, submission.CurrentSubmissionDataId.Value).ToList(); 
-
-                            //    _log.Info(String.Format("Exporting detailed submission results to reports table started.."));
-
-                            //    var res = context.PopulateDetailedSubmissionResults(submission.CurrentSubmissionDataId.Value);
-
-                            //    _log.Info(String.Format("Exporting detailed submission results to reports table completed."));
-
-                            //    ///////////////////////////////////////////////////////////////////
-                            //}
-                            _log.Info(String.Format("Expiry date {0}", expiryDate));
-                            _log.Info(String.Format("Store database creation started...."));
+                                GetMessageServiceInfo getmessageserviceinfo = new GetMessageServiceInfo();
+                                IMessageServices imessageservices = getmessageserviceinfo.GetMessageService("Email");
+                                var isMessageSent = imessageservices.SendMessage("OnePos retail login details.", string.Format("Hi {0}, \n\n\tOnePOS retail account has been created successfully. Please use the following creadentials to access admin panel.\n\n Admin panel url : www.oneposretail.com \n UserName : {1} \n Password : {2}", storeInfo["StoreOwnerName"].ToString(), storeInfo["AdminUsername"].ToString(), Encrypt.Decrypt(storeInfo["AdminPassword"].ToString())), storeInfo["EmailId"].ToString());
+                                 
+                            }
                         }
                     }
                 }

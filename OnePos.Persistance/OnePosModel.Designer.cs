@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\OnePos_New\OnePos\OnePos.Persistance\OnePosModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\DevRabbit_Projects\OnePOSRetail\OnePos.Persistance\OnePosModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

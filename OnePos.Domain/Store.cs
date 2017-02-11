@@ -1,6 +1,6 @@
-﻿using System; 
+﻿using System;
 
-namespace OnePos.Message.Model
+namespace OnePos.Domain
 {
     public class Store
     {
@@ -15,19 +15,8 @@ namespace OnePos.Message.Model
         public string AdminPassword { get; set; }
         public string EmailId { get; set; }
         public bool IsActive { get; set; }
-        public int StoreStatusId { get; set; }
-
-        public int StoreTypeId { get; set; }
-
-        public string StoreTypeName { get; set; }
-
-        public bool IsFirstLogin { get; set; }
-
-        public string Address { get; set; }
-        public string DBUserName { get; set; }
-        public string DBPassword { get; set; }
-        public string DatabaseName { get; set; } 
-        public bool IsMainDB { get; set; }
-
+        public int StoreStatusId { get; set; } 
+        public int StoreTypeId { get; set; } 
+        public bool IsFirstLogin { get; set; } 
     }
 }

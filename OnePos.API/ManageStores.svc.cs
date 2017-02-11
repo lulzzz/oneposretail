@@ -1,35 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-using System.Globalization;
+﻿using System; 
+using System.Data; 
 using System.Linq;
-using System.Net;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.ServiceModel.Web;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Web;
-using OnePos.DataCollector;
+using System.Net; 
+using System.ServiceModel.Web; 
 using OnePos.Domain;
 using OnePos.Domain.Encryption;
 using OnePos.Message;
 using OnePos.Persistance;
 using OnePos.ServiceInterface;
-using System.ServiceModel.Activation;
-using System.IO;
+using System.ServiceModel.Activation; 
 using OnePos.Framework.Domain;
 using OnePos.Framework.ServiceModel;
-using OnePos.Framework.Extensions;
-
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Hosting;
+using OnePos.Framework.Extensions; 
 using OnePos.API.Models;
 using OnePos.Framework;
-using OnePos.Message.Model; 
+using OnePos.Message.Model;
+using OnePos.MessageService;
 
 namespace OnePos.API
 {
@@ -39,13 +25,16 @@ namespace OnePos.API
     [AspNetCompatibilityRequirements(
        RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class ManageStores : IManageStores
-    {
+    { 
         public StoreAPIResponse CreateStore(string ResponseFormat, StoreAPIRequest storeInfo)
         {
             StoreAPIResponse storeapiresponse = new StoreAPIResponse();
-            IOnePosEntities OnePosEntities = new OnePosEntities();
-            IOnePosEntitiesFactory dFactory = new OnePosEntitiesFactory(DependencyContainer.Default);
-            CreateStoreHandler createProductHandler = new CreateStoreHandler(dFactory, OnePosEntities);
+            var connString = "";// "onepos_bba4a354_f4b3_4d57_b370_a6fd011de4dd_MainDB";// @"metadata=res://*/OnePosModel.csdl|res://*/OnePosModel.ssdl|res://*/OnePosModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source = himasankar - pc; Initial Catalog = onepos_bba4a354_f4b3_4d57_b370_a6fd011de4dd_MainDB; Integrated Security = True; MultipleActiveResultSets = True'";
+             
+            //IOnePosEntities OnePosEntitiesCopy = new OnePosEntities(dConn2, false); 
+            IOnePosEntities OnePosEntitiesCopy = new OnePosEntities();
+            IOnePosEntitiesFactory dFactory = new OnePosEntitiesFactory(DependencyContainer.Default); 
+            CreateStoreHandler createstorehandler = new CreateStoreHandler(dFactory, OnePosEntitiesCopy);
 
             if (ResponseFormat.ToLower() == "json")
             {
@@ -61,34 +50,49 @@ namespace OnePos.API
             }
 
             TwoWayEncryptionDecryption Encrypt = new TwoWayEncryptionDecryption();
+            var stroreUniqueKey = GenerateAPIKey();
+            var adminUserName = storeInfo.emailid;
+            var adminPassword = RandomString(9);
             CreateStoreRequest createstorerequest = new CreateStoreRequest()
             {
-                Store = new Store
+                Store = new Message.Model.Store
                 {
                     StoreName = storeInfo.storename,
                     StoreOwnerName = storeInfo.storeownername,
-                    StoreUniqueKey = GenerateAPIKey(),
+                    StoreUniqueKey = stroreUniqueKey,
                     StoreAddress = storeInfo.storeaddress,
                     PhoneNumber = storeInfo.phonenumber,
                     LicenseExpiry = Encrypt.Encrypt(storeInfo.licenseexpiry),
-                    AdminUsername = Encrypt.Encrypt("admin"), //NEED TO GENERATE THIS USERNAME AND PASSWORD
-                    AdminPassword = Encrypt.Encrypt("admin"),
+                    AdminUsername = adminUserName,
+                    AdminPassword = Encrypt.Encrypt(adminPassword),
                     EmailId = storeInfo.emailid,
                     IsActive = !string.IsNullOrEmpty(storeInfo.isactive) ? Convert.ToBoolean(storeInfo.isactive) : false,
-                    StoreStatusId = (int)OnePosStoreStatusEnum.Queued
+                    IsFirstLogin = true,
+                    StoreStatusId = (int)OnePosStoreStatusEnum.Queued,
+                    StoreTypeId = storeInfo.storetypeid
+                },
+                StoreAccessModules = new Message.Model.StoreAccessModules
+                {
+                    IsInventoryAccess = true,
+                    IsProductManagementAccess = true,
+                    IsReportsAccess = false,
+                    IsTimeSheetManagementAccess = false,
+                    IsUserManagementAccess = true,
+                    NumberOfBranchesAllow = 5
                 }
             };
 
             try {
 
                 CreateStoreResponse createstoreresponse = new CreateStoreResponse();
-                createstoreresponse = createProductHandler.Handle(createstorerequest);
+                createstoreresponse = createstorehandler.Handle(createstorerequest);
 
                 if (createstoreresponse.ExceptionType == ExceptionType.None)
                 {
-                    storeapiresponse.storeid = createstoreresponse.StoreId;
+                    storeapiresponse.storeid = createstoreresponse.StoreId; 
                     storeapiresponse.statusCode = HttpStatusCode.OK;
                     storeapiresponse.statusMessage = "Store created successfully.";
+
                 }
                 else
                 {
@@ -106,6 +110,7 @@ namespace OnePos.API
         public StoreAPIResponse UpdateStore(string ResponseFormat, StoreAPIRequest storeInfo)
         {
             StoreAPIResponse storeapiresponse = new StoreAPIResponse();
+            //IOnePosEntities OnePosEntities = new OnePosEntities(@"metadata=res://*/OnePosModel.csdl|res://*/OnePosModel.ssdl|res://*/OnePosModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source = himasankar - pc; Initial Catalog = onepos_bba4a354_f4b3_4d57_b370_a6fd011de4dd_MainDB; Integrated Security = True; MultipleActiveResultSets = True'");
             IOnePosEntities OnePosEntities = new OnePosEntities();
             IOnePosEntitiesFactory dFactory = new OnePosEntitiesFactory(DependencyContainer.Default);
             UpdateStoreHandler updateStoreHandler = new UpdateStoreHandler(dFactory, OnePosEntities);
@@ -126,7 +131,7 @@ namespace OnePos.API
             TwoWayEncryptionDecryption Encrypt = new TwoWayEncryptionDecryption();
             UpdateStoreRequest updatestorerequest = new UpdateStoreRequest()
             {
-                Store = new Store
+                Store = new Message.Model.Store
                 {
                     ID=storeInfo.id,
                     StoreName = storeInfo.storename,
@@ -137,7 +142,7 @@ namespace OnePos.API
                     LicenseExpiry = Encrypt.Encrypt(storeInfo.licenseexpiry),
                     //AdminUsername = Encrypt.Encrypt("admin"), //NEED TO GENERATE THIS USERNAME AND PASSWORD
                     //AdminPassword = Encrypt.Encrypt("admin"),
-                    EmailId = storeInfo.emailid,
+                    //EmailId = storeInfo.emailid,
                     IsActive = !string.IsNullOrEmpty(storeInfo.isactive) ? Convert.ToBoolean(storeInfo.isactive) : false
                 }
             };
@@ -170,8 +175,12 @@ namespace OnePos.API
 
         public StoreListResponse GetStores(string ResponseFormat)
         {
+            var connString = "onepos_bba4a354_f4b3_4d57_b370_a6fd011de4dd_MainDB";// @"metadata=res://*/OnePosModel.csdl|res://*/OnePosModel.ssdl|res://*/OnePosModel.msl;provider=System.Data.SqlClient;provider connection string='Data Source = himasankar - pc; Initial Catalog = onepos_bba4a354_f4b3_4d57_b370_a6fd011de4dd_MainDB; Integrated Security = True; MultipleActiveResultSets = True'";
+
             StoreListResponse storeapiresponse = new StoreListResponse();
             IOnePosEntities OnePosEntities = new OnePosEntities();
+
+
             GetStoresHandler getstoreshandler = new GetStoresHandler(OnePosEntities);
 
             if (ResponseFormat.ToLower() == "json")
@@ -204,11 +213,11 @@ namespace OnePos.API
                         storeuniquekey = x.StoreUniqueKey,
                         storeaddress = x.StoreAddress,
                         phonenumber = x.PhoneNumber,
-                        licenseexpiry = Encrypt.Decrypt(x.LicenseExpiry),
-                        adminusername = Encrypt.Decrypt(x.AdminUsername),
-                        adminpassword = Encrypt.Decrypt(x.AdminPassword),
+                        licenseexpiry = Encrypt.Decrypt(x.LicenseExpiry), 
                         emailid = x.EmailId,
                         isactive = x.IsActive.ToString(),
+                        storetypeid=x.StoreTypeId,
+                        storetypename=x.StoreTypeName,
                         StoreStatus= EnumExtensions.GetDescription((OnePosStoreStatusEnum)x.StoreStatusId),
                 }).ToList();
 
@@ -230,11 +239,74 @@ namespace OnePos.API
             return storeapiresponse;
         }
 
+        public StoreTypeResponse GetStoreTypes(string ResponseFormat)
+        {
+
+            StoreTypeResponse storetyperesponse = new StoreTypeResponse();
+            IOnePosEntities OnePosEntities = new OnePosEntities();
+
+
+            GetStoreTypesHandler getstoretypeshandler = new GetStoreTypesHandler(OnePosEntities);
+
+            if (ResponseFormat.ToLower() == "json")
+            {
+                WebOperationContext.Current.OutgoingResponse.Format = WebMessageFormat.Json;
+            }
+            else if (ResponseFormat.ToLower() == "xml")
+            {
+                WebOperationContext.Current.OutgoingResponse.Format = WebMessageFormat.Xml;
+            }
+            else
+            {
+                WebOperationContext.Current.OutgoingResponse.Format = WebMessageFormat.Json;
+            }
+
+            TwoWayEncryptionDecryption Encrypt = new TwoWayEncryptionDecryption();
+            try
+            {
+
+                GetStoreTypesResponse getstoretypesresponse = new GetStoreTypesResponse();
+                getstoretypesresponse = getstoretypeshandler.Handle(new GetStoreTypesRequest() { });
+
+                if (getstoretypesresponse.ExceptionType == ExceptionType.None)
+                {
+                    storetyperesponse.storetypes = getstoretypesresponse.StoreTypes.Select(x => new StoreTypes
+                    {
+                        stroretypeid=x.StoreTypeId,
+                         storetypename=x.StoreName,
+                          storetypedescription=x.StoreDescription
+                    }).ToList();
+
+                    storetyperesponse.statusCode = HttpStatusCode.OK;
+                    storetyperesponse.statusMessage = "Stores Types List";
+                }
+                else
+                {
+                    storetyperesponse.statusCode = HttpStatusCode.BadRequest;
+                    storetyperesponse.statusMessage = getstoretypesresponse.Exception.Message;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                storetyperesponse.statusCode = HttpStatusCode.BadRequest;
+                storetyperesponse.statusMessage = ex.Message;
+            }
+            return storetyperesponse;
+        }
+
         public virtual string GenerateAPIKey()
         {
             IUniqueIdentifierGenerator ib = new GuidCombGenerator();
             string KeyString = ib.GenerateNewId().ToString();
             return KeyString;
+        }
+        private static Random random = new Random();
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }

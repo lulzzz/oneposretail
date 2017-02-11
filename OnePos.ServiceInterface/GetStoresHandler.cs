@@ -8,6 +8,7 @@ using OnePos.Message.Model;
 using OnePos.Persistance;
 using OnePos.Framework.ServiceModel;
 using OnePos.Domain;
+using System.Data;
 
 namespace OnePos.ServiceInterface
 {
@@ -23,21 +24,25 @@ namespace OnePos.ServiceInterface
         {
             var response = new GetStoresResponse();
 
-            response.Stores = _onePosEntities.OnePosStores.Select(x => new Store
+            response.Stores = _onePosEntities.GetOnePosStores().AsEnumerable().Select(x => new Message.Model.Store
             {
-                ID = x.ID,
-                StoreName = x.StoreName,
-                StoreOwnerName = x.StoreOwnerName,
-                StoreUniqueKey = x.StoreUniqueKey,
-                StoreAddress = x.StoreAddress,
-                PhoneNumber = x.PhoneNumber,
-                LicenseExpiry = x.LicenseExpiry,
-                AdminUsername = x.AdminUsername,
-                AdminPassword = x.AdminPassword,
-                EmailId = x.EmailId,
-                IsActive = (bool)x.IsActive,
-                StoreStatusId = (int)x.StoreStatus
-            }).ToList();
+                ID = (long)x["ID"],
+                StoreName = x["StoreName"].ToString(),
+                StoreOwnerName = x["StoreOwnerName"].ToString(),
+                StoreUniqueKey = x["StoreUniqueKey"].ToString(),
+                StoreAddress = x["StoreAddress"].ToString(),
+                PhoneNumber = x["PhoneNumber"].ToString(),
+                LicenseExpiry = x["LicenseExpiry"].ToString(),
+                AdminUsername = x["AdminUsername"].ToString(),
+                AdminPassword = x["AdminPassword"].ToString(),
+                EmailId = x["EmailId"].ToString(),
+                IsActive = (bool)x["IsActive"],
+                StoreStatusId = (int)x["StoreStatus"],
+                StoreTypeId=(int)x["StoreTypeId"],
+                IsFirstLogin=(bool)x["IsFirstLogin"],
+                StoreTypeName=x["StoreTypeName"].ToString()
+            }).ToList(); 
+
 
             return response;
         }

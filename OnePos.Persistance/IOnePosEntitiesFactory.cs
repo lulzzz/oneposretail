@@ -4,7 +4,7 @@ namespace OnePos.Persistance
 {
     public interface IOnePosEntitiesFactory
     {
-        IOnePosEntities Create();
+        IOnePosEntities Create(string dataSource = null, string connectionString=null);
     }
 
     public class OnePosEntitiesFactory : IOnePosEntitiesFactory
@@ -18,9 +18,16 @@ namespace OnePos.Persistance
 
         #region IOnePosEntitiesFactory Members
 
-        public IOnePosEntities Create()
+        public IOnePosEntities Create(string dataSource=null, string connectionString = null)
         {
-            var onePosEntities = _container.Resolve<IOnePosEntities>();
+            IOnePosEntities onePosEntities;
+            if (!string.IsNullOrEmpty(dataSource) && !string.IsNullOrEmpty(connectionString))
+            {
+                onePosEntities = _container.Resolve<IOnePosEntities>().CreateEntitiesForSpecificDatabaseName(dataSource, connectionString);
+            }
+            else {
+                onePosEntities = _container.Resolve<IOnePosEntities>();
+            }
             // Need to release the object otherwise there will be memoery leaks
 
             onePosEntities.OnDisposed += (sender, args) => _container.Release(sender);

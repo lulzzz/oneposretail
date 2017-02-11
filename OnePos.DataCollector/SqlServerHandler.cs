@@ -8,7 +8,8 @@ using OnePos.Message.Model;
 using System.Globalization;
 using System.Configuration;
 using OnePos.Domain.Encryption;
-using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Formatters.Binary; 
+using Microsoft.SqlServer.Management.Common;
 
 
 namespace OnePos.DataCollector
@@ -203,17 +204,22 @@ namespace OnePos.DataCollector
 
         }
 
-        public bool CreateTableFromQuery(string Query)
+        public bool ExecuteSQLQuery(string Query)
         {
             bool retVal = false;
             try
             {
 
-                SqlConnection con = new SqlConnection(connectionString);
-                SqlCommand cmd = new SqlCommand(Query, con);
-                con.Open();
-                cmd.ExecuteNonQuery(); 
-                con.Close();
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand(Query, con);
+                    con.Open();
+                   // cmd.ExecuteNonQuery(); 
+                    Microsoft.SqlServer.Management.Smo.Server server = new Microsoft.SqlServer.Management.Smo.Server(new ServerConnection(con));
+                   server.ConnectionContext.ExecuteNonQuery(Query);
+                   con.Close();
+                }
+
                 retVal = true;
             }
             catch (Exception ex)

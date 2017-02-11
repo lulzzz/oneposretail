@@ -10,6 +10,7 @@ namespace OnePos.Message
     public class CreateStoreRequest : Request
     {
         public Store Store { get; set; }
+        public StoreAccessModules StoreAccessModules { get; set; }
     }
 
     public class CreateStoreResponse : Response

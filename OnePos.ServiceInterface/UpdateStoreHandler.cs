@@ -15,31 +15,42 @@ namespace OnePos.ServiceInterface
     {
         private readonly IOnePosEntitiesFactory _contextFactory;
         private readonly IOnePosEntities _onePosEntities;
+        private string _dataSourceName;
+        private string _databaseName;
 
-        public UpdateStoreHandler(IOnePosEntitiesFactory contextFactory, IOnePosEntities onePosEntities)
+        public UpdateStoreHandler(IOnePosEntitiesFactory contextFactory, IOnePosEntities onePosEntities, string dataSourceName=null, string databaseName=null)
         {
             _contextFactory = contextFactory;
             _onePosEntities = onePosEntities;
+            _dataSourceName = dataSourceName;
+            _databaseName = databaseName;
         }
 
         public UpdateStoreResponse Handle(UpdateStoreRequest request)
         {
-            var response = new UpdateStoreResponse();
+            var response = new UpdateStoreResponse(); 
+            var storeInfo = _onePosEntities.UpdateStore(new Store
+            {
+                 ID=request.Store.ID,
+                StoreName = request.Store.StoreName,
+                StoreOwnerName = request.Store.StoreOwnerName,
+                //StoreUniqueKey = request.Store.StoreUniqueKey,
+                StoreAddress = request.Store.StoreAddress,
+                PhoneNumber = request.Store.PhoneNumber,
+                LicenseExpiry = request.Store.LicenseExpiry,
+                //AdminUsername = request.Store.AdminUsername,
+                //AdminPassword = request.Store.AdminPassword,
+                EmailId = request.Store.EmailId,
+                IsActive = request.Store.IsActive,
+                //IsFirstLogin = request.Store.IsFirstLogin,
+                //StoreStatusId = request.Store.StoreStatusId
+            });
 
-            var storeInfo = _onePosEntities.OnePosStores.FirstOrDefault(x => x.ID == request.Store.ID);
-
-            storeInfo.StoreName = request.Store.StoreName;
-            storeInfo.StoreOwnerName = request.Store.StoreOwnerName;
-            //storeInfo.StoreUniqueKey = request.Store.StoreUniqueKey;
-            storeInfo.StoreAddress = request.Store.StoreAddress;
-            storeInfo.PhoneNumber = request.Store.PhoneNumber;
-            storeInfo.LicenseExpiry = request.Store.LicenseExpiry;
-            //storeInfo.AdminUsername = request.Store.AdminUsername;
-            //storeInfo.AdminPassword = request.Store.AdminPassword;
-            storeInfo.EmailId = request.Store.EmailId;
-            storeInfo.IsActive = request.Store.IsActive;
-
-            _onePosEntities.SaveChanges();
+            if (storeInfo == false)
+            {
+                response.ExceptionType = ExceptionType.Unknown;
+                response.Exception = new ExceptionInfo(new Exception("Store update failed."));
+            }
 
             return response;
         }

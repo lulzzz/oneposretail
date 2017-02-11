@@ -128,7 +128,5 @@ namespace OnePos.Persistance
         public IDbSet<VendorAccount> VendorAccounts { get; set; }
         public IDbSet<VendorProduct> VendorProducts { get; set; }
         public IDbSet<WorkCenter> WorkCenters { get; set; }
-        public IDbSet<OnePosStoreStatu> OnePosStoreStatus { get; set; }
-        public IDbSet<OnePosStore> OnePosStores { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace OnePos.DataCollector
         string ExportDataToServer(DataTable dataTable, string DestinationTbl);
         bool AddColumn(string TableName);
         DateTime GetExpiryDate(string connectionString);  
-        bool CreateTableFromQuery(string Query); 
+        bool ExecuteSQLQuery(string Query); 
         
     }
 }

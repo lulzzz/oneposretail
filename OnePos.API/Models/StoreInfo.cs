@@ -13,12 +13,11 @@ namespace OnePos.API.Models
         public string storeuniquekey { get; set; }
         public string storeaddress { get; set; }
         public string phonenumber { get; set; }
-        public string licenseexpiry { get; set; }
-        public string adminusername { get; set; }
-        public string adminpassword { get; set; }
+        public string licenseexpiry { get; set; } 
         public string emailid { get; set; }
         public string isactive { get; set; }
-
+        public int storetypeid { get; set; }  
+        public string storetypename { get; set; }
         public string StoreStatus { get; set; }
     }
 
@@ -35,4 +34,6 @@ namespace OnePos.API.Models
         public string statusMessage { get; set; }
         public HttpStatusCode statusCode { get; set; }
     }
+
+
 }

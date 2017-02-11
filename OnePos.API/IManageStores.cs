@@ -28,6 +28,10 @@ namespace OnePos.API
         [WebGet(UriTemplate = "GetStores/{ResponseFormat}")]
         StoreListResponse GetStores(string ResponseFormat);
 
+        [OperationContract]
+        [WebGet(UriTemplate = "GetStoreTypes/{ResponseFormat}")]
+        StoreTypeResponse GetStoreTypes(string ResponseFormat);
+
 
     }
 }

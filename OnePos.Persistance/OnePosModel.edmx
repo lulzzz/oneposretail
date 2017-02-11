@@ -5,19 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="OnePosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="OnePosStoreStatus">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="varchar" MaxLength="128" />
-          <Property Name="Description" Type="varchar(max)" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="CreatedBy" Type="varchar(max)" />
-          <Property Name="ModifiedDate" Type="datetime" />
-          <Property Name="ModifiedBy" Type="varchar(max)" />
-          <Property Name="Version" Type="timestamp" StoreGeneratedPattern="Computed" />
-        </EntityType>
         <EntityType Name="AccessLevels">
           <Key>
             <PropertyRef Name="Id" />
@@ -1087,23 +1074,6 @@
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
           <Property Name="TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="128" />
-        </EntityType>
-        <EntityType Name="OnePosStores">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="StoreName" Type="nvarchar" MaxLength="500" />
-          <Property Name="StoreOwnerName" Type="nvarchar" MaxLength="500" />
-          <Property Name="StoreUniqueKey" Type="nvarchar(max)" />
-          <Property Name="StoreAddress" Type="nvarchar" MaxLength="2000" />
-          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
-          <Property Name="LicenseExpiry" Type="nvarchar(max)" />
-          <Property Name="AdminUsername" Type="nvarchar" MaxLength="500" />
-          <Property Name="AdminPassword" Type="nvarchar(max)" />
-          <Property Name="EmailId" Type="nvarchar" MaxLength="2000" />
-          <Property Name="IsActive" Type="bit" />
-          <Property Name="StoreStatus" Type="int" />
         </EntityType>
         <EntityType Name="OrderedRecipes">
           <Key>
@@ -3349,20 +3319,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_OnePosStores_OnePosStoreStatus">
-          <End Role="OnePosStoreStatus" Type="Self.OnePosStoreStatus" Multiplicity="0..1" />
-          <End Role="OnePosStores" Type="Self.OnePosStores" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OnePosStoreStatus">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OnePosStores">
-              <PropertyRef Name="StoreStatus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="OnePosModelStoreContainer">
-          <EntitySet Name="OnePosStoreStatus" EntityType="Self.OnePosStoreStatus" Schema="code" store:Type="Tables" />
           <EntitySet Name="AccessLevels" EntityType="Self.AccessLevels" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ASSN_EMG_EM" EntityType="Self.ASSN_EMG_EM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ASSN_FMG_FM" EntityType="Self.ASSN_FMG_FM" Schema="dbo" store:Type="Tables" />
@@ -3410,7 +3367,6 @@
           <EntitySet Name="MenuGroups" EntityType="Self.MenuGroups" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Menus" EntityType="Self.Menus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NoSales" EntityType="Self.NoSales" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OnePosStores" EntityType="Self.OnePosStores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderedRecipes" EntityType="Self.OrderedRecipes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PageLayoutStructures" EntityType="Self.PageLayoutStructures" Schema="dbo" store:Type="Tables" />
@@ -3764,10 +3720,6 @@
           <AssociationSet Name="FK_dbo_VendorProducts_dbo_VendorAccounts_VendorAccountId" Association="Self.FK_dbo_VendorProducts_dbo_VendorAccounts_VendorAccountId">
             <End Role="VendorAccounts" EntitySet="VendorAccounts" />
             <End Role="VendorProducts" EntitySet="VendorProducts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OnePosStores_OnePosStoreStatus" Association="Self.FK_OnePosStores_OnePosStoreStatus">
-            <End Role="OnePosStoreStatus" EntitySet="OnePosStoreStatus" />
-            <End Role="OnePosStores" EntitySet="OnePosStores" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -7059,58 +7011,8 @@
             <End Role="AutoGratuityClones" EntitySet="AutoGratuityClones" />
             <End Role="Sales" EntitySet="Sales" />
           </AssociationSet>
-          <EntitySet Name="OnePosStoreStatus" EntityType="OnePosModel.OnePosStoreStatu" />
-          <EntitySet Name="OnePosStores" EntityType="OnePosModel.OnePosStore" />
-          <AssociationSet Name="FK_OnePosStores_OnePosStoreStatus" Association="OnePosModel.FK_OnePosStores_OnePosStoreStatus">
-            <End Role="OnePosStoreStatu" EntitySet="OnePosStoreStatus" />
-            <End Role="OnePosStore" EntitySet="OnePosStores" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="OnePosStoreStatu">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="CreatedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-          <Property Name="ModifiedBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Version" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
-          <NavigationProperty Name="OnePosStores" Relationship="OnePosModel.FK_OnePosStores_OnePosStoreStatus" FromRole="OnePosStoreStatu" ToRole="OnePosStore" />
-        </EntityType>
-        <EntityType Name="OnePosStore">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="StoreName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="StoreOwnerName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="StoreUniqueKey" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="StoreAddress" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="LicenseExpiry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="AdminUsername" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="AdminPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="EmailId" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" />
-          <Property Name="StoreStatus" Type="Int32" />
-          <NavigationProperty Name="OnePosStoreStatu" Relationship="OnePosModel.FK_OnePosStores_OnePosStoreStatus" FromRole="OnePosStore" ToRole="OnePosStoreStatu" />
-        </EntityType>
-        <Association Name="FK_OnePosStores_OnePosStoreStatus">
-          <End Type="OnePosModel.OnePosStoreStatu" Role="OnePosStoreStatu" Multiplicity="0..1" />
-          <End Type="OnePosModel.OnePosStore" Role="OnePosStore" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OnePosStoreStatu">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OnePosStore">
-              <PropertyRef Name="StoreStatus" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
+          </EntityContainer>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -9480,39 +9382,7 @@
               <ScalarProperty Name="Id" ColumnName="Sale_Id" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="OnePosStoreStatus">
-            <EntityTypeMapping TypeName="OnePosModel.OnePosStoreStatu">
-              <MappingFragment StoreEntitySet="OnePosStoreStatus">
-                <ScalarProperty Name="Version" ColumnName="Version" />
-                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OnePosStores">
-            <EntityTypeMapping TypeName="OnePosModel.OnePosStore">
-              <MappingFragment StoreEntitySet="OnePosStores">
-                <ScalarProperty Name="StoreStatus" ColumnName="StoreStatus" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
-                <ScalarProperty Name="AdminPassword" ColumnName="AdminPassword" />
-                <ScalarProperty Name="AdminUsername" ColumnName="AdminUsername" />
-                <ScalarProperty Name="LicenseExpiry" ColumnName="LicenseExpiry" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="StoreAddress" ColumnName="StoreAddress" />
-                <ScalarProperty Name="StoreUniqueKey" ColumnName="StoreUniqueKey" />
-                <ScalarProperty Name="StoreOwnerName" ColumnName="StoreOwnerName" />
-                <ScalarProperty Name="StoreName" ColumnName="StoreName" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -9675,10 +9545,7 @@
         <AssociationConnector Association="OnePosModel.ASSN_SURCFG_SG" ManuallyRouted="false" />
         <AssociationConnector Association="OnePosModel.ASSN_TAXCFG_TG" ManuallyRouted="false" />
         <AssociationConnector Association="OnePosModel.SaleAutoGratuityClones" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="OnePosModel.OnePosStoreStatu" Width="1.5" PointX="25.375" PointY="1.375" />
-        <EntityTypeShape EntityType="OnePosModel.OnePosStore" Width="1.5" PointX="27.625" PointY="1" />
-        <AssociationConnector Association="OnePosModel.FK_OnePosStores_OnePosStoreStatus" />
-      </Diagram>
+        </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>
