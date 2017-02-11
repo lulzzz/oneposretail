@@ -63,9 +63,9 @@ public delegate void OnDisposedDelegate( object sender, EventArgs args );
 
 	event OnDisposedDelegate OnDisposed;
 
-	int SaveChanges();
-
-
+	int SaveChanges(); 
+	  
+	OnePosEntities CreateEntitiesForSpecificDatabaseName(string dataSource, string databaseName, bool contextOwnsConnection = true);
 
 <#
     foreach (var entitySet in container.BaseEntitySets.OfType<EntitySet>())
