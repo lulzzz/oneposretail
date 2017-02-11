@@ -281,7 +281,6 @@ namespace OnePos.Persistance
             return dt;
         }
 
-        //test
         public void BulkQuerySample(List<string> QueriesList)
         {
             
