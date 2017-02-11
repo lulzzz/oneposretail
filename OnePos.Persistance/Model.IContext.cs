@@ -26,9 +26,12 @@ namespace OnePos.Persistance
     	event OnDisposedDelegate OnDisposed;
     
     	int SaveChanges();
-    
-    
-    
+
+       void InsertCommandforTaxRelation(Guid TaxID, System.Collections.Generic.List<TaxConfiguration> Taxes);
+
+
+
+
         IDbSet<AccessLevel> AccessLevels { get; set; }
         IDbSet<AutoGratuity> AutoGratuities { get; set; }
         IDbSet<AutoGratuityClone> AutoGratuityClones { get; set; }

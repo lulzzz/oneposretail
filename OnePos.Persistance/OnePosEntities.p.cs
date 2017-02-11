@@ -23,6 +23,24 @@ namespace OnePos.Persistance
             Database.ExecuteSqlCommand(string.Format("insert into emptable(empid) values({0})", ID));
         }
 
+        public void InsertCommandforTaxRelation(Guid TaxGroupID,List<TaxConfiguration> Taxes)
+        {
+
+          //  Database.ExecuteSqlCommand("DELETE FROM  [ASSN_TAXCFG_TG] Where [TaxGroup_Id] = "+ TaxGroupID);
+
+            foreach (var taxconfiguration in Taxes)
+            {
+                Database.ExecuteSqlCommand(string.Format("INSERT INTO [ASSN_TAXCFG_TG]([TaxGroup_Id],[TaxConfiguration_Id]) VALUES ({0},{1}) values({0})", TaxGroupID, taxconfiguration.Id));
+            }
+           
+        }
+
+        public void DeleteCommandforTaxRelation(Guid TaxID, Guid TaxGroupID)
+        {
+            //Database.ExecuteSqlCommand(string.Format("insert into emptable(empid) values({0})", ID));
+        }
+
+
         #region OnePosEntities Members
 
         public override int SaveChanges()
