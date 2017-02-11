@@ -47,6 +47,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnePos.ClientApplicationSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnePos.ClientApplicationService", "OnePos.ClientApplicationService\OnePos.ClientApplicationService.csproj", "{B59F6813-00D3-42C1-9422-B2465F219B08}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Message Service", "Message Service", "{29F6FB64-BA03-4C67-A691-DC732A57485C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnePos.MessageService", "OnePos.MessageService\OnePos.MessageService.csproj", "{0D29A170-E75F-4E9A-A0B1-CCAF0B9D7BE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +113,10 @@ Global
 		{B59F6813-00D3-42C1-9422-B2465F219B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B59F6813-00D3-42C1-9422-B2465F219B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B59F6813-00D3-42C1-9422-B2465F219B08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D29A170-E75F-4E9A-A0B1-CCAF0B9D7BE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D29A170-E75F-4E9A-A0B1-CCAF0B9D7BE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D29A170-E75F-4E9A-A0B1-CCAF0B9D7BE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D29A170-E75F-4E9A-A0B1-CCAF0B9D7BE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,5 +135,6 @@ Global
 		{73A165CE-547F-40A1-B4C6-1E1A7E7BB164} = {F0F0637A-B338-4845-91BC-823F1A9119F8}
 		{C805375C-B94D-43AD-AD38-67E745008A08} = {6DD53C12-9B4F-4521-A85C-3E587A3209ED}
 		{B59F6813-00D3-42C1-9422-B2465F219B08} = {6DD53C12-9B4F-4521-A85C-3E587A3209ED}
+		{0D29A170-E75F-4E9A-A0B1-CCAF0B9D7BE3} = {29F6FB64-BA03-4C67-A691-DC732A57485C}
 	EndGlobalSection
 EndGlobal
