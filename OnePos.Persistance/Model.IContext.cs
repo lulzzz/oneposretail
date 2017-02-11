@@ -13,9 +13,7 @@ namespace OnePos.Persistance
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using OnePos.Domain;
-    using System.Data;
-    using System.Collections.Generic;
-
+    
     public delegate void OnDisposedDelegate( object sender, EventArgs args );
     
     public interface IOnePosEntities : IDisposable
@@ -26,22 +24,14 @@ namespace OnePos.Persistance
         int? CommandTimeout { get; set; }
     
     	event OnDisposedDelegate OnDisposed;
-        long CreateStore(Store store);
-        bool UpdateStore(Store store);
-        DataTable GetOnePosStoreTypes();
-        DataTable GetOnePosStores();
-        DataTable GetOnePosStoreDatabases();
-        bool UpdateOnePosStoreStatus(long StoreId, int StatusId);
-        bool UpdateOnePosStoreDatabaseConnections(long StoreId, int MainDBConnectionId, int BackupDBConnectinId);
-        bool CreateVerticalDatabaseConnections(string Address, string DatabaseName, string UserName, string Password, int StoreTypeId, int IsMainDB);
-        long CreateStoreAccessModules(StoreAccessModules storeaccessmodules); 
-        DataTable GetStoreAccessModules(long storeId);
-
-        void BulkQuerySample(List<string> QueriesList);
-        int SaveChanges(); 
-    	  
-    	OnePosEntities CreateEntitiesForSpecificDatabaseName(string dataSource, string databaseName, bool contextOwnsConnection = true);
     
+    	int SaveChanges();
+
+       void InsertCommandforTaxRelation(Guid TaxID, System.Collections.Generic.List<TaxConfiguration> Taxes);
+
+
+
+
         IDbSet<AccessLevel> AccessLevels { get; set; }
         IDbSet<AutoGratuity> AutoGratuities { get; set; }
         IDbSet<AutoGratuityClone> AutoGratuityClones { get; set; }
@@ -120,5 +110,7 @@ namespace OnePos.Persistance
         IDbSet<VendorAccount> VendorAccounts { get; set; }
         IDbSet<VendorProduct> VendorProducts { get; set; }
         IDbSet<WorkCenter> WorkCenters { get; set; }
+        IDbSet<OnePosStoreStatu> OnePosStoreStatus { get; set; }
+        IDbSet<OnePosStore> OnePosStores { get; set; }
     }
 }
