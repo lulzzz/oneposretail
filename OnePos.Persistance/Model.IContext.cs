@@ -38,9 +38,12 @@ namespace OnePos.Persistance
         DataTable GetStoreAccessModules(long storeId);
 
         void BulkQuerySample(List<string> QueriesList);
-        int SaveChanges(); 
-    	  
-    	OnePosEntities CreateEntitiesForSpecificDatabaseName(string dataSource, string databaseName, bool contextOwnsConnection = true);
+        int SaveChanges();
+
+        void InsertCommandforTaxRelation(Guid TaxGroupID, List<TaxConfiguration> Taxes);
+
+
+        OnePosEntities CreateEntitiesForSpecificDatabaseName(string dataSource, string databaseName, bool contextOwnsConnection = true);
     
         IDbSet<AccessLevel> AccessLevels { get; set; }
         IDbSet<AutoGratuity> AutoGratuities { get; set; }

@@ -281,6 +281,27 @@ namespace OnePos.Persistance
             return dt;
         }
 
+        public void InsertCommandforTaxRelation(Guid TaxGroupID,List<TaxConfiguration>Taxes)
+        {
+           
+
+            var sqlCommand = new StringBuilder();
+            sqlCommand.AppendLine("BEGIN TRANSACTION");
+            sqlCommand.AppendLine(string.Format("DELETE FROM ASSN_TAXCFG_TG WHERE TaxGroup_Id = '{0}' ", TaxGroupID));
+
+            foreach (var Taxconf in Taxes)
+            {
+                sqlCommand.AppendLine(string.Format("INSERT INTO [ASSN_TAXCFG_TG]([TaxGroup_Id],[TaxConfiguration_Id]) values('{0}','{1}')", TaxGroupID, Taxconf.Id));
+            }
+
+            sqlCommand.AppendLine("COMMIT TRANSACTION");
+
+            string strCommandText = sqlCommand.ToString();
+
+            Database.ExecuteSqlCommand(sqlCommand.ToString());
+
+        }
+
         public void BulkQuerySample(List<string> QueriesList)
         {
             
