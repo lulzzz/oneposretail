@@ -20,8 +20,10 @@ namespace OnePos.API
         private static readonly IDependencyContainer _container = DependencyContainer.Default;
         protected void Application_Start(object sender, EventArgs e)
         {
-            RouteTable.Routes.Add(new ServiceRoute("API/Product", new WebServiceHostFactory(), typeof(ManageProduct)));
+           // RouteTable.Routes.Add(new ServiceRoute("API/Products", new WebServiceHostFactory(), typeof(ManageProducts)));
             RouteTable.Routes.Add(new ServiceRoute("API/Stores", new WebServiceHostFactory(), typeof(ManageStores)));
+           // RouteTable.Routes.Add(new ServiceRoute("API/Users", new WebServiceHostFactory(), typeof(ManageUsers)));
+            RouteTable.Routes.Add(new ServiceRoute("API/Taxes", new WebServiceHostFactory(), typeof(ManageTaxes)));
             RegisterPersistence();
         }
 
